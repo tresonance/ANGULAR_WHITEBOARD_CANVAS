@@ -1,0 +1,119 @@
+<body>
+  <div class="header-container">
+      <div class="header">
+          <div class="logo"  >
+              <div style="width:25%; height:25%; margin-left:-3%; margin-top:-1%; ">
+                  <a [routerLink]="['/loni']" >
+                      <img src="../../../assets/img/accueil2/logo.png" alt="loni" style="width:40%; height:480%; " />
+                      <span style="font-weight:bold; margin-left:-19px; font-family:cursive, sans-serif">Loni</span>
+                      <div style="font-size:0.5em;  position:absolute;  width: 140px; display:block; top:29px; left:80px;">Les cours et suivi particuliers</div>
+                  </a>
+              </div>
+          </div> <!-- LOGO end here -->
+
+          <div id="menu">
+              <ul id="nav">
+                  <li><a  [routerLink]="['/loni']" >Accueil</a></li>
+                  <li><a  [routerLink]="['/a_propos']" >A propos</a></li>
+                  <!--<li><a href="#" target="_self" >A Propos</a></li> -->
+                  <!--<li><a href="#" target="_self" >Qui suis je?</a></li>-->
+                  <li><a [routerLink]="['/infos-services']"  class="sub_menu_after_flag">Infos & Services</a>
+                      <ul class="sub_menu_before1_flag">
+                          <!-- <li><a href="#" target="_self" >Qui-suis je?</a></li> -->
+                          <li><a [routerLink]="['/infos-services']" >Cours</a>
+                              <ul >
+                                    <li><a [routerLink]="['/infos-services/?cours-domicile']" class="sub_menu_before2_flag">Cours à domicile</a>
+                                    <!--<li><a [routerLink]="['/infos-services/cours/cours-ligne']" >Cours en ligne</a>-->
+                                    <li><a [routerLink]="['/infos-services/?cours-intensifs']" >Cours intensifs</a>
+                                    <li><a [routerLink]="['/infos-services/?cours-live']" >cours en live</a>
+                                    <li><a [routerLink]="['/infos-services/?cours-ligne']" >cours en ligne</a>
+                              </ul>
+                          </li>
+                          <li><a [routerLink]="['/infos-services/?cours-suivi']" >Cours et suivi</a>
+                          <li><a  [routerLink]="['/infos-services/?commentaires']">Les avis</a>
+                      </ul>
+                </li>
+                <li><a [routerLink]="['/contact']" >Contact</a></li>
+                <li><a [routerLink]="['/register']" ><span class="show-reg-form-signup hidden-xs"><i style="margin:5px;" class="fa fa-user-secret"></i>Sign up</span></a></li>
+              <li><a [routerLink]="['/login']"><span class="show-reg-form "><i style="margin:5px;" class="fa fa-sign-in"></i>Sign In</span></a></li>
+            </ul>
+        </div> <!-- MENU end here -->
+    </div><!-- HEADER end here -->
+  </div> <!-- HEADER-CONTAINER end here -->
+
+  <div class="section-apropos">
+        <div class="section-ruban">
+              A propos:
+        </div>
+        <div class="text-apropos" style="padding-left:10px;">
+
+              <div style="float:left;"><img style=" width: auto; padding:25px;; margin:0;" src="https://codeboxr.net/themedemo/unialumni/html/assets/img/blog/blog-2.jpg" alt=""></div>
+              <div style="">
+                    <h2 ><a href="single-event.html"></a></h2>
+
+                    <h3>Notre concept, notre histoire, notre équipe</h3>
+
+                    <h4>Notre concept</h4>
+                    <p>loni est le site de suivi et d'encadrements personalisé de lycéens jusqu'au baccalauréat en Maths, physique ;
+                      chimie et à l'initiation à la programmation informatique en langage C et python.</p>
+                    <p>Loni se fixe pour mission non seulement de rehausser le niveau scientifique des éléves et de les renfre polyvalence.
+                      Pour ce faire, l'éléve réçoit nos cours (en temps réels s'il le desire) à la suite de quoi des exercices lui seront
+                      proposés afin de tester ces compétences.Il pourra le faire </p>
+
+                    <h4>Notre histoire</h4>
+                    <p>Evoluant dans le domaine des cours particuliers depuis bien longtemps, notre methode d'encadrement et de suivi des éléves
+                      a toujours fait de bons resultats et des mentions au baccalaureat</p>
+                    <p>A travers loni, nous decidons de partager notre pedagogie afin de faire beneficier un grand nombre d'éleves</p>
+
+                    <h4>Notre équipe</h4>
+                    <p>loni regorge des étudiants, des enseignants et des passionnés tous ayant des profils scientiques ayant un savoir-faire et une ma^trise parfaite dans les disciplines ci-dessus nommées. </p>
+                    <p class="join-us"><a  [routerLink]="['/loni']" class="btn btn-brand btn-brand-dark">Retour</a></p>
+              </div>
+
+        </div>
+  </div>
+  <!-- footer footer start here-->
+  <div class="content-container" style="clear:left;">
+    <div class="content">
+      <div class="footer">
+
+        <div class="footer-sitemap">
+          <div class="footer-section">
+            <b>Nos compétences</b><br /><br />
+            <a href="#">Maths séconde - terminale</a><br />
+            <a href="#">Physique séconde - terminale</a><br />
+            <a href="#">Chimie séconde - terminale</a><br />
+            <a href="#">Initiation à la programmation C/python</a><br />
+          </div>
+
+          <div class="footer-section">
+            <b></b><br /><br />
+            <a href="#"></a><br />
+            <a href="#"></a><br />
+            <a href="#"></a>
+            <a href="#"></a><br />
+          </div>
+
+          <div class="footer-section">
+            <b></b><br /><br />
+            <a href="mailto:tresonance@hotmail.fr">Nous contacter</a><br />
+            <a href="#">Terms &amp; privacy</a><br />
+          </div>
+
+          <div class="footer-section">
+            <div class="social-media-links">
+              <b>Nous suivre:</b><br/><br />
+              <a href="http://www.facebook.com/SchoolYourself"><img src="//schoolyourself.org/images/facebook_icon.png" width="30"/></a>
+              <a href="https://plus.google.com/111095141647823369081/posts"><img src="//schoolyourself.org/images/gplus_icon.png" width="30"/></a>
+              <a href="http://twitter.com/SchoolYourself"><img src="//schoolyourself.org/images/twitter_icon.png" width="30"/></a>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="copyright">&copy; 2012-2015 School Yourself, Inc.<br/>
+          Icons from <a href="http://glyphicons.com">glyphicons.com</a> <a href="http://creativecommons.org/licenses/by/3.0/deed.en">(license)</a></div>
+      </div>
+    </div>
+  </div>
+</body>

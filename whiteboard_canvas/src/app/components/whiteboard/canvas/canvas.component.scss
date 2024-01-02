@@ -1,0 +1,34 @@
+
+* {
+  -moz-box-sizing: border-box; /* firefox */
+  -webkit-box-sizing: border-box; /*chrome & safari */
+  -ms-box-sizing: border-box; /* IE */
+   box-sizing:border-box;
+
+   -moz-user-select: none;
+   -webkit-user-select:none;
+   -ms-user-select: none;
+   user-select:none;
+
+   margin:0;
+}
+
+.canvas_whiteboard {
+    position: absolute;
+    width:100%;
+    height:80%; //MODIFIER HEIGHT CANVAS ICI
+    //z-index: 1;
+}
+.incomplete_shapes_canvas_whiteboard {
+    position: absolute;
+    width:100%;
+    height:100%; //MODIFIER HEIGHT CANVAS ICI
+    //z-index: 2;
+}
+
+.canvas_wrapper_div {
+    padding:0;
+    width: 100%;
+    height: 100%;
+    border: 0.5px solid #e2e2e2;
+}

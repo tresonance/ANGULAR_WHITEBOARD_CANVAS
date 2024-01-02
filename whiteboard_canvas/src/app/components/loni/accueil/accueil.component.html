@@ -1,0 +1,372 @@
+
+<!--== Header Area Start ==-->
+<body >
+  <!-- <div class="video-container"><iframe width="853" height="480" src="https://www.youtube.com/embed/z9Ul9ccDOqE" frameborder="0" allowfullscreen></iframe></div> -->
+    <div class="header-container">
+        <div class="header">
+            <div class="logo"  >
+                <div style="width:25%; height:25%; margin-left:-3%; margin-top:-1%; ">
+                    <a [routerLink]="['/loni']" >
+                        <img src="../../../assets/img/accueil2/logo.png" alt="loni" style="width:40%; height:480%; " />
+                        <span style="font-weight:bold; margin-left:-19px; font-family:cursive, sans-serif">Loni</span>
+                        <div style="font-size:0.5em;  position:absolute;  width: 140px; display:block; top:29px; left:80px;">Les cours et suivi particuliers</div>
+                    </a>
+                </div>
+            </div> <!-- LOGO end here -->
+
+            <div id="menu">
+                <ul id="nav">
+                    <li><a  [routerLink]="['/loni']" >Accueil</a></li>
+                    <li><a  [routerLink]="['/a_propos']" >A propos</a></li>
+                    <!--<li><a href="#" target="_self" >A Propos</a></li> -->
+                    <!--<li><a href="#" target="_self" >Qui suis je?</a></li>-->
+                    <li><a [routerLink]="['/infos-services']"  class="sub_menu_after_flag">Infos & Services</a>
+                        <ul class="sub_menu_before1_flag">
+                            <!-- <li><a href="#" target="_self" >Qui-suis je?</a></li> -->
+                            <li><a [routerLink]="['/infos-services']" >Cours particuliers</a>
+                              <ul >
+                                    <li><a [routerLink]="['/infos-services/?cours-domicile']" class="sub_menu_before2_flag">Cours à domicile</a>
+                                    <!--<li><a [routerLink]="['/infos-services/cours/cours-ligne']" >Cours en ligne</a>-->
+                                    <li><a [routerLink]="['/infos-services/?cours-intensifs']" >Cours intensifs</a>
+                                    <li><a [routerLink]="['/infos-services/?cours-live']" >cours en live</a>
+                                    <li><a [routerLink]="['/infos-services/?cours-ligne']" >cours en ligne</a>
+                              </ul>
+                          </li>
+                          <li><a [routerLink]="['/infos-services/?cours-suivi']" >Cours et suivi</a>
+                          <li><a  [routerLink]="['/infos-services/?commentaires']">Les avis</a>
+                        </ul>
+                  </li>
+                  <li><a [routerLink]="['/contact']" >Contact</a></li>
+                <!--  <li><a [routerLink]="['/login']"> Mon Compte</a></li> -->
+                    <li><a [routerLink]="['/register']" ><span class="show-reg-form-signup hidden-xs"><i style="margin:5px;" class="fa fa-user-secret"></i>Sign up</span></a></li>
+                  <li><a [routerLink]="['/login']"><span class="show-reg-form "><i style="margin:5px;" class="fa fa-sign-in"></i>Sign In</span></a></li>
+              </ul>
+          </div> <!-- MENU end here -->
+      </div><!-- HEADER end here -->
+    </div> <!-- HEADER-CONTAINER end here -->
+
+    <div class="content-container greenbg" #haut>
+      <div class="content" style="">
+        <div id="big-fade-in" >
+          <h1>Maths, Physique, Chimie, Initialisation à la Programmation en C/Python</h1>
+          <p>Les cours particuliers autrement</p>
+
+          <div class="demo-container" >
+            <div class="demo-left">
+              <div class="demo-carousel-container">
+                <div class="demo-image-container" onclick="moveCarousel()">
+              <!--    <div class="apm" style="display:none;position:absolute;top:-25px;left:0;right:0;margin:auto; background-im:url('../../../assets/img/accueil/page-title.jpg');"></div> -->
+
+
+                  <!--<div class="math_jack" [appMath]="mathLatex1"></div>-->
+
+                  <div class="math_jack" [appMath]="mathLatex2"></div>
+                  <div  class="math_jack" [appMath]="mathLatex3"></div>
+                  <div  class="math_jack" [appMath]="mathLatex4"></div>
+                  <div  class="math_jack" [appMath]="mathLatex5"></div>
+
+                  <div style="position:absolute;left:-9%;top:36%;" class="math_jack" [appMath]="mathLatex6"></div>
+                  <!--<div style="" class="math_jack" [appMath]="mathLatex5"></div> -->
+                  <div style="position:absolute;left:79%;top:36%;" class="math_jack" [appMath]="mathLatex7"></div>
+                  <div style="position:absolute;left:79%;top:56%;" class="math_jack" [appMath]="mathLatex8"></div>
+
+                  <!-- <div [appMath]="mathMl"></div> -->
+                  <!-- will render inline element math -->
+                  <!-- <div [appMath]>
+                    $E = mc^2$
+                  </div> -->
+
+
+                  <!-- <canvas id="canvas" width="490" height="190" style="border:1px double black"></canvas> -->
+									<!-- <img class="selected" src="//static.schoolyourself.org/images/demo_triangle.gif" />
+                   <img src="//static.schoolyourself.org/images/demo_sketch.gif"   />
+                  <img src="//static.schoolyourself.org/images/demo_tree.gif"  />
+                  <img src="//static.schoolyourself.org/images/demo_web.gif"  /> -->
+                </div> <!-- end  DEMO IMAGE CONTAINER-->
+              </div><!-- end  DEMO CARROUSSEL CONTAINER-->
+            </div><!-- end  DEMO LEFT-->
+          </div><!-- end DEMO CONTAINER -->
+        </div><!-- end DEMO BIG FADE IN -->
+      </div><!-- end  DEMO CONTENT-->
+    </div><!-- end CONTENT-CONTAINER OR GREENBG -->
+
+<hr />
+<span id="feedback" style="font-size:24px;"></span>
+    <!--== Upcoming Event Area Start ==-->
+<div class="sub-header-container">
+<section id="upcoming-area">
+         <!-- <div class="col-lg-12"> -->
+             <div class="upcoming-event-wrap">
+                 <div class="upcoming-event-content owl-carousel">
+                   <!-- No 1 Event -->
+                <!--  <!-- <div class="single-upcoming-event" id="about-area">
+                       <div class="row">
+                           <div class="col-lg-5">
+                               <div class="up-event-thumb">
+                                   <img src="https://codeboxr.net/themedemo/unialumni/html/assets/img/event/event-img-1.jpg" class="img-fluid" alt="Upcoming Event">
+                                   <h4 class="up-event-date">Le jeudi 06 Novembre 2019, à 14h</h4>
+                               </div>
+                           </div>
+
+                           <div class="col-lg-7">
+                               <div class="display-table">
+                                   <div class="display-table-cell">
+                                       <div class="up-event-text">
+                                         <div class="up-event-titile">
+                                             <h3>Prochain Evenement!<br />Rappel</h3>
+                                         </div>
+                                           <div class="event-countdown">
+                                              <ul class="">
+                                                <li>
+                                                    <div>Days</div>
+                                                    <div class="event-countdown-counter" data-date="2018/9/10">dd</div>
+                                                 </li>
+                                                  <li>
+                                                      <div>Hr</div>
+                                                      <div class="event-countdown-counter" data-date="2018/9/10">hh</div>
+                                                   </li>
+                                                   <li>
+                                                       <div>Mn</div>
+                                                       <div class="event-countdown-counter" data-date="2018/9/10">mn</div>
+                                                    </li>
+                                                    <li>
+                                                        <div>Sec</div>
+                                                        <div class="event-countdown-counter" data-date="2018/9/10">ss</div>
+                                                     </li>
+                                              </ul>
+                                           </div>
+                                           <h2 ><a href="single-event.html">Challenge sur la fonction logarythme néperien</a></h2>
+                                           <p>Bonjour à tous les abonnés, il est question relever ce defit en un temps record sur la function "ln" ?, rend toi sur ton espace personnel et inscris toi. Une fois ton inscription validée, tu recevras une notification.</p>
+                                           <p class="join-us"><a  [routerLink]="['/login']" class="btn btn-brand btn-brand-dark">Rejoignez nous</a></p>
+                                       </div>
+                                   </div>
+                               </div>
+                           </div>
+                       </div>
+                   </div>
+                   <hr /> -->
+                   <!-- partial -->
+
+                   <!--== About Area Start ==-->
+                   <!-- No 1 Event -->
+                   <div class="single-upcoming-event" id="single-upcoming-event3"  >
+                       <div class="row" id="accueil-area">
+                           <div class="col-lg-5">
+                               <div class="up-event-thumb" >
+                                   <!-- <img src="https://codeboxr.net/themedemo/unialumni/html/assets/img/blog/blog-2.jpg" class="img-fluid" alt="Upcoming Event"> -->
+
+                               </div>
+                           </div>
+
+                           <div class="col-lg-7" >
+                               <div class="display-table">
+                                   <div class="display-table-cell">
+                                       <div class="up-event-text">
+
+                                           <h2 ><a href="single-event.html">A propos</a></h2>
+
+                                           <h3>Notre concept, notre histoire, notre équipe</h3>
+
+                                           <h4>Notre concept</h4>
+                                           <p>loni est le site de suivi et d'encadrements personalisé de lycéens jusqu'au baccalauréat en Maths, physique ;
+                                             chimie et à l'initiation à la programmation informatique en langage C et python.</p>
+                                           <p>Loni se fixe pour mission non seulement de rehausser le niveau scientifique des éléves et de les renfre polyvalence.
+                                              Pour ce faire, l'éléve réçoit nos cours (en temps réels s'il le desire) à la suite de quoi des exercices lui seront
+                                              proposés afin de tester ces compétences.Il pourra le faire </p>
+
+                                           <h4>Notre histoire</h4>
+                                           <p>Evoluant dans le domaine des cours particuliers depuis bien longtemps, notre methode d'encadrement et de suivi des éléves
+                                              a toujours fait de bons resultats et des mentions au baccalaureat</p>
+                                           <p>A travers loni, nous decidons de partager notre pedagogie afin de faire beneficier un grand nombre d'éleves</p>
+
+                                           <h4>Notre équipe</h4>
+                                           <p>loni regorge des étudiants, des enseignants et des passionnés tous ayant des profils scientiques ayant un savoir-faire et une ma^trise parfaite dans les disciplines ci-dessus nommées. </p>
+                                           <p class="join-us"><a  [routerLink]="['/a_propos']" class="btn btn-brand btn-brand-dark">Plus ...</a></p>
+
+                                       </div> <!-- end UP-EVENT-TEXT -->
+                                   </div><!-- end DISPLAY TABLE CEIL -->
+                               </div><!-- end DISPLAY TABLE -->
+                           </div><!-- end col-lg-7 -->
+                       </div> <!-- end ACCUEIL AREA -->
+                   </div><!-- end SINGLE UPCOMING EVENT -->
+
+
+                   <!-- partial -->
+                   <!-- <hr />
+                   <div class="single-upcoming-event" id="single-upcoming-event2"  >
+                       <div class="row">
+                           <div class="col-lg-5">
+                               <div class="up-event-thumb">
+                                   <img src="https://codeboxr.net/themedemo/unialumni/html/assets/img/gallery/gellary-img-1.jpg" class="img-fluid" alt="Upcoming Event">
+
+                               </div>
+                           </div>
+
+                           <div class="col-lg-7">
+                               <div class="display-table">
+                                   <div class="display-table-cell">
+                                       <div class="up-event-text">
+
+                                           <h2 ><a href="single-event.html">Notre mission </a></h2>
+                                           <p>Notre mission est de  rend toi sur ton espace personnel et inscris toi. Une fois ton inscription validée, tu recevras une notification.</p>
+                                           <p class="join-us"><a  [routerLink]="['/login']" class="btn btn-brand btn-brand-dark">Plus ...</a></p>
+                                       </div>
+                                   </div>
+                               </div>
+                           </div>
+                       </div>
+                   </div> -->
+                     <!-- partial -->
+                     <hr />
+                     <div class="tables-container">
+                       <div class="sub-section" id="left-section">
+
+                         <table class="table-content">
+                            <tbody>
+                              <tr style="border-bottom: 0px;">
+                                <td align="center"><img class="aligncenter wp-image-322" src="https://mathwithsophie.com/wp-content/uploads/2016/10/Icon-Graduate-MathwithSophie-150x150.png" alt="" width="170" height="170" srcset="https://mathwithsophie.com/wp-content/uploads/2016/10/Icon-Graduate-MathwithSophie-150x150.png 150w, https://mathwithsophie.com/wp-content/uploads/2016/10/Icon-Graduate-MathwithSophie-300x300.png 300w, https://mathwithsophie.com/wp-content/uploads/2016/10/Icon-Graduate-MathwithSophie-180x180.png 180w, https://mathwithsophie.com/wp-content/uploads/2016/10/Icon-Graduate-MathwithSophie.png 301w" sizes="(max-width: 170px) 100vw, 170px" />
+                                </td>
+                                <td style="padding: 20px; text-align: center;">
+                                    <h3 style="text-align: left;">Experienced Math Tutor in Marbella</h3>
+                                    <p style="text-align: left;">10+ years of experience in teaching exams such as iGCSE, A-Level &amp; IB.</p>
+                                </td>
+                              </tr>
+                            </tbody>
+                         </table>
+
+                         <table class="footer" border="0">
+                           <tbody>
+                             <tr style="border-bottom: 0px;">
+                               <td align="center"><img class="aligncenter wp-image-321 size-medium" src="https://mathwithsophie.com/wp-content/uploads/2016/10/Icon-Globe-MathwithSophie-300x300.png" alt="" width="200" height="200" srcset="https://mathwithsophie.com/wp-content/uploads/2016/10/Icon-Globe-MathwithSophie-300x300.png 300w, https://mathwithsophie.com/wp-content/uploads/2016/10/Icon-Globe-MathwithSophie-150x150.png 150w, https://mathwithsophie.com/wp-content/uploads/2016/10/Icon-Globe-MathwithSophie-180x180.png 180w, https://mathwithsophie.com/wp-content/uploads/2016/10/Icon-Globe-MathwithSophie.png 301w" sizes="(max-width: 200px) 100vw, 200px" />
+                               </td>
+                               <td style="padding: 20px; text-align: left;">
+                                 <h3>International Math Tutor in Marbella</h3>
+                                 <p>My students come from a lots of countries with many different languages and religions.</p>
+                                </td>
+                              </tr>
+                            </tbody>
+                        </table>
+
+
+                        <table class="footer" border="0">
+                            <tbody>
+                              <tr style="border-bottom: 0px;">
+                                  <td align="center"><img class="aligncenter wp-image-366 size-medium" src="https://mathwithsophie.com/wp-content/uploads/2016/10/Icon-Tech-MathwithSophie-300x300.png" alt="" width="200" height="200" srcset="https://mathwithsophie.com/wp-content/uploads/2016/10/Icon-Tech-MathwithSophie-300x300.png 300w, https://mathwithsophie.com/wp-content/uploads/2016/10/Icon-Tech-MathwithSophie-150x150.png 150w, https://mathwithsophie.com/wp-content/uploads/2016/10/Icon-Tech-MathwithSophie-180x180.png 180w, https://mathwithsophie.com/wp-content/uploads/2016/10/Icon-Tech-MathwithSophie.png 301w" sizes="(max-width: 200px) 100vw, 200px" />
+                                  </td>
+                                  <td style="padding: 20px; text-align: left;">
+                                    <h3>Technology in Teaching</h3>
+                                    <p>Because students want their notes on all their devices they need the latest technology.</p>
+                                  </td>
+                              </tr>
+                            </tbody>
+                        </table>
+                       </div> <!-- end LEFT SECTION -->
+
+
+                       <div class="sub-section" id="right-section">
+                         <table class="footer" border="0">
+                           <tbody>
+                             <tr style="border-bottom: 0px;">
+                               <td align="center"><img class="aligncenter size-medium wp-image-323" src="https://mathwithsophie.com/wp-content/uploads/2016/10/Icon-Phone-MathwithSophie-300x300.png" alt="" width="200" height="200" srcset="https://mathwithsophie.com/wp-content/uploads/2016/10/Icon-Phone-MathwithSophie-300x300.png 300w, https://mathwithsophie.com/wp-content/uploads/2016/10/Icon-Phone-MathwithSophie-150x150.png 150w, https://mathwithsophie.com/wp-content/uploads/2016/10/Icon-Phone-MathwithSophie-180x180.png 180w, https://mathwithsophie.com/wp-content/uploads/2016/10/Icon-Phone-MathwithSophie.png 301w" sizes="(max-width: 200px) 100vw, 200px" />
+                               </td>
+                               <td style="padding: 20px; text-align: left;">
+                                 <h3>Support</h3>
+                                 <p>Students are welcome to contact me when they need help outside of their class time.</p>
+                               </td>
+                              </tr>
+                          </tbody>
+                        </table>
+
+
+                        <table class="footer" border="0">
+                          <tbody>
+                            <tr style="border-bottom: 0px;">
+                              <td align="center"><img class="aligncenter wp-image-320 size-medium" src="https://mathwithsophie.com/wp-content/uploads/2016/10/Icon-English-MathwithSophie-300x300.png" alt="" width="185" height="185" srcset="https://mathwithsophie.com/wp-content/uploads/2016/10/Icon-English-MathwithSophie-300x300.png 300w, https://mathwithsophie.com/wp-content/uploads/2016/10/Icon-English-MathwithSophie-150x150.png 150w, https://mathwithsophie.com/wp-content/uploads/2016/10/Icon-English-MathwithSophie-180x180.png 180w, https://mathwithsophie.com/wp-content/uploads/2016/10/Icon-English-MathwithSophie.png 301w" sizes="(max-width: 185px) 100vw, 185px" />
+                              </td>
+                              <td style="padding: 20px; text-align: left;">
+                                <h3>Maths for non-native English Speakers</h3>
+                                <p>Especially for non native speakers I speak slowly, clearly and use simple words.</p>
+                              </td>
+                            </tr>
+                          </tbody>
+                       </table>
+
+                       <table class="footer" border="0">
+                         <tbody>
+                           <tr style="border-bottom: 0px;">
+                             <td align="center"><img class="aligncenter wp-image-324 size-medium" src="https://mathwithsophie.com/wp-content/uploads/2016/10/Icon-Webcam-MathwithSophie-300x300.png" alt="" width="200" height="200" srcset="https://mathwithsophie.com/wp-content/uploads/2016/10/Icon-Webcam-MathwithSophie-300x300.png 300w, https://mathwithsophie.com/wp-content/uploads/2016/10/Icon-Webcam-MathwithSophie-150x150.png 150w, https://mathwithsophie.com/wp-content/uploads/2016/10/Icon-Webcam-MathwithSophie-180x180.png 180w, https://mathwithsophie.com/wp-content/uploads/2016/10/Icon-Webcam-MathwithSophie.png 301w" sizes="(max-width: 200px) 100vw, 200px" />
+                             </td>
+                             <td style="padding: 20px; text-align: left;">
+                               <h3>Top quality video in online lessons</h3>
+                               <p>Online lessons use Zoom™ . Therefore it is high quality interactive learning experience.</p>
+                             </td>
+                               </tr>
+                          </tbody>
+                        </table>
+
+
+                       </div> <!-- end RIGHT SECTION -->
+                     </div> <!-- END TABLES-CONTAINER
+<!--== Our Responsibility Area Start ==-->
+
+<!--== Our Responsibility Area End ==-->
+
+
+                 </div> <!-- end UPCOMING-EVENT-CONTENT-->
+             </div> <!-- UPCOMING_EVENT_WRAP -->
+        <!-- </div> --> <!-- end COL-LG-12 -->
+</section>
+</div>
+<!--== Upcoming Event Area End ==-->
+
+    <hr width="960" />
+<div class="content-container">
+  <div class="content">
+    <div class="footer">
+
+      <div class="footer-sitemap">
+        <div class="footer-section">
+          <b>Nos compétences</b><br /><br />
+          <a href="#">Maths séconde - terminale</a><br />
+          <a href="#">Physique séconde - terminale</a><br />
+          <a href="#">Chimie séconde - terminale</a><br />
+          <a href="#">Initiation à la programmation C/python</a><br />
+        </div>
+
+        <div class="footer-section">
+          <b></b><br /><br />
+          <a href="#"></a><br />
+          <a href="#"></a><br />
+          <a href="#"></a>
+          <a href="#"></a><br />
+        </div>
+
+        <div class="footer-section">
+          <b></b><br /><br />
+          <a href="mailto:tresonance@hotmail.fr">Nous contacter</a><br />
+          <a href="#">Terms &amp; privacy</a><br />
+        </div>
+
+        <div class="footer-section">
+          <div class="social-media-links">
+            <b>Nous suivre:</b><br/><br />
+            <a href="http://www.facebook.com/SchoolYourself"><img src="//schoolyourself.org/images/facebook_icon.png" width="30"/></a>
+            <a href="https://plus.google.com/111095141647823369081/posts"><img src="//schoolyourself.org/images/gplus_icon.png" width="30"/></a>
+            <a href="http://twitter.com/SchoolYourself"><img src="//schoolyourself.org/images/twitter_icon.png" width="30"/></a>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="copyright">&copy; 2012-2015 School Yourself, Inc.<br/>
+        Icons from <a href="http://glyphicons.com">glyphicons.com</a> <a href="http://creativecommons.org/licenses/by/3.0/deed.en">(license)</a></div>
+    </div>
+  </div>
+</div>
+
+  </body>
+<!-- Register / Login -->
+<!-- <div class="register-login-area">
+      <a [routerLink]="['/register']" class="btn">Register</a>
+      <a [routerLink]="['/login']" class="btn active">Login</a>
+</div> -->

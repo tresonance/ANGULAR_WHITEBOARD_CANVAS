@@ -1,0 +1,186 @@
+<body>
+  <div class="forum-page-header">
+
+      <div class="forum-page-header-nav">
+        <div class="header-container">
+            <div class="header">
+                <div class="logo"  >
+                    <div style="width:25%; height:25%; margin-left:-3%; margin-top:-1%; ">
+                        <a [routerLink]="['/loni']" >
+                            <img src="../../../assets/img/accueil2/logo.png" alt="loni" style="width:40%; height:480%; " />
+                            <span style="font-weight:bold; margin-left:-19px; font-family:cursive, sans-serif">Loni</span>
+                            <div style="font-size:0.5em;  position:absolute;  width: 140px; display:block; top:29px; left:80px;">Les cours et suivi particuliers</div>
+                        </a>
+                    </div>
+                </div> <!-- LOGO end here -->
+
+                <div id="menu">
+                    <ul id="nav">
+                        <li><a  [routerLink]="['/loni']" ></a></li>
+                        <li><a  href="javascript:void(0);" ><span style="font-size:0.7em; color:blue;">Connecté(e) en tant que:&nbsp;</span><span style="margin-left:7px;margin-right:6px;">{{pseudo}}</span></a></li>
+                        <!--<li><a href="#" target="_self" >A Propos</a></li> -->
+                        <!--<li><a href="#" target="_self" >Qui suis je?</a></li>-->
+
+                      <li><a [routerLink]="['/profile']"><span class="glyphicon glyphicon-arrow-left"></span></a></li>
+                      <li>  <a (click)="logOut($event)" style="cursor:pointer;"><span class="glyphicon glyphicon-off"></span></a></li>
+                  </ul>
+              </div> <!-- MENU end here -->
+          </div><!-- HEADER end here -->
+        </div> <!-- HEADER-CONTAINER end here -->
+      </div>
+
+
+      <div class="list-forums-et-messages">
+          <ul>
+            <!-----------Les forums -------------->
+            <li>
+              <h3>Les salons:&nbsp;&nbsp;</h3>
+              <div *ngFor="let room of chatRooms; index as i" (click)="selectChatRoom(room)" [ngClass]="{'chat-room-joined' : isChatRoomJoined(room)}" >
+                  <p [id]="'romm-clicked'">{{room.name}}</p>
+              </div>
+            </li>
+
+              <!-----------Les messages -------------->
+              <li>
+                      <!---------------- selectionner votre forum ----------------------->
+                      <div class="start-select-forum" *ngIf="!chatRoom?.name" >
+                        <h2>Bienvenue sur le Chat de Loni</h2>
+                        <h5>Merci de prendre connaisance des <a [routerLink]="['/chatrooms/chat-page/regle-du-chat']">règles</a> du Chat.</h5>
+                        <h3>Pour commencer, <span style="color:green;">choisissez votre salon</span></h3>
+                        <h3 class="ok-info" id="id-ok-first-info" style="">OK</h3>
+                      </div>
+                      <!--------------- le nombre utilisateur connecté ------------------------->
+                      <div class="nombre-utilisateur-connecté" *ngIf="chatRoom?.name">
+                        <p>  Bienvenue au salon <span style="font-size:1.4em;color:green;">{{(chatRoom)?.name}}</span>&nbsp;,il ya <span style="color:green;font-size:1.2em;">{{ (chatRoomChatUsers)?.length }}</span> <span>&nbsp; {{chatRoomLocalization.title}}</span> <span *ngIf="(chatRoomChatUsers)?.length > 1">s</span>&nbsp;connecté<span *ngIf="(chatRoomChatUsers)?.length > 1">s</span><span>.</span></p>
+                        <p *ngIf="hasJoinThechat" class="flashMessager">
+                            <b style="font-style:italic;font-size:0.8em;"><span style="color:blue;">{{chatRoomChatUser.email}}&nbsp;</span>   {{chatRoomLocalization.flashMessage}}</b>
+                        </p>
+                      </div>
+                      <!-----------------------------------les messages --------------------------------------------------------------->
+                      <div class="chat-message-container">
+                        <div class="chat-message">
+                        <div   *ngFor="let chatMsg of chatRoomHistories; index as i">  <!-- [dir]="chatMsg.user.uuid == chatRoomChatUser.uuid ?  'ltr' : 'rtl'" >  -->
+
+                          <div style="margin:10px;"  >
+
+                            <!--------- profil ----------->
+                            <div style="width:45%; height:15px;">
+                              <img style="width:16px;height:16px;"   matListAvatar matTooltip="{{chatMsg.user?.name}}" src="https://randomuser.me/api/portraits/thumb/lego/{{i}}.jpg"/>
+                                  <span style="font-size:0.7em;" class="chat-timestamp">&nbsp;&nbsp;{{chatMsg.dateSent}}: </span>
+                                  <span style="font-size:0.7em;" [ngStyle]="{'color':chatMsg.user.uuid == chatRoomChatUser.uuid ? 'blue' : 'black', 'font-weight': 'bold'}" class="sender_pseudo">[{{chatMsg.user.name}}]&nbsp;&nbsp;</span>
+                                  <!--<span class="glyphicon glyphicon-play">&nbsp;</span>-->
+                              </div>
+
+                              <div style="width:auto; height:auto; margin:10px; margin-left:7%;">
+                                  <!--------------- text --------------->
+                                  <span style="font-family:'Courier New', Courier, monospace, serif;" *ngIf="isMessageChat(chatMsg)" [dir]="'rtl'">{{chatMsg.message}}</span>
+
+                                      <!---------- image ------------->
+                                  <div class="progress" *ngIf="progress?.percentage && chatMsg.messageType === 'IMAGE'">
+                                          <div class="progress-bar progress-bar-animated" [ngStyle]="{ 'width': progress?.percentage + '%' }">{{progress?.percentage}}%</div>
+                                  </div>
+                                  <div [ngStyle]="{'width': image_width, 'height': image_height, 'padding': '0px', 'border':'1px solid #F8F8A8', 'margin':'10px'}" *ngIf="isImageChat(chatMsg)">
+                                        <span  [ngStyle]="{'width':'100%', 'height':'95%', 'text-align':'center'}" class="chat-image" ><img style="width:95%; height:95%;" [src]="getSantizeUrl(chatMsg.downloadUrl)"/></span>
+                                        <div [ngStyle]="{'width' : '100%', 'height':'5%', 'border':'1px solid #E0E0E0'}">
+                                            <a [href]="getSantizeUrl(chatMsg.downloadUrl)" [target]="'_blank'"><button class="btn btn-primary"  ><span class="glyphicon glyphicon-new-window"></span>Agrandir</button></a>
+                                            <!-- <a [ngStyle]="{'width': '30px', 'height':'30px','display': 'inline-block', 'position': 'relative', 'left': '50%'}"  [href]="downloadFile(chatMsg)" ><i style="font-size:1.2em;" class="fa fa-download"></i></a> -->
+                                            <span>&nbsp;&nbsp;&nbsp;</span>
+                                            <a (click)="downloadFile(chatMsg)" target="'_self'" ><button class="btn btn-primary"  ><i class="fa fa-file-pdf-o"></i> Download</button></a>
+                                        </div>
+                                  </div>
+
+                                    <!-------------   file ---------->
+                                  <!-- <span  class="chat-image" *ngIf="isFileChat(chatMsg)">{{chatMsg.file_name}}<img style="width:360px; height:170px;" [src]="getSantizeUrl(chatMsg.downloadUrl)" /></span> -->
+                                  <div class="progress" *ngIf="progress?.percentage && chatMsg.messageType === 'FILE'">
+                                      <div class="progress-bar progress-bar-animated" [ngStyle]="{ 'width': progress?.percentage + '%' }">{{progress?.percentage}}%</div>
+                                  </div>
+                                  <div style="display: flex; background-color:white; margin:8px;" *ngIf="isFileChat(chatMsg)" class="file-details" >
+                                      <a [attr.href]="getSantizeUrl(chatMsg.downloadUrl)" target="_blank" rel="noopener noreferrer"  style="width:60%; display:inline-block; height:50px;" download>
+                                          <i style="display:inline-block;color:#d7d5d5; margin:5px;font-size:30px;" class="fa fa-file" aria-hidden="true"></i>
+                                          <span style="width:80%; text-align:center;" class="file-message-title" [attr.title]="chatMsg.file_name">{{chatMsg.file_name}} </span>
+                                          <span style="text-align:center;" *ngIf="chatMsg.fileSizeInBytes" class="file-message-size">&nbsp;&nbsp;{{chatMsg.fileSizeInBytes}}(KB)</span>
+                                      </a>
+                                  </div>
+
+                                  <!-------------- video    --------->
+                                  <div class="progress" *ngIf="progress?.percentage && chatMsg.messageType === 'VIDEO'">
+                                      <div class="progress-bar progress-bar-animated" [ngStyle]="{ 'width': progress?.percentage + '%' }">{{progress?.percentage}}%</div>
+                                  </div>
+                                  <video width="400" controls *ngIf="isVideoChat(chatMsg)">
+                                    <source [src]="getSantizeUrl(chatMsg.downloadUrl)" type="video/mp4">
+                                    <!-- <source src="mov_bbb.ogg" type="video/ogg"> -->
+                                      Your browser does not support HTML5 video.
+                                  </video>
+                                  <!------------------------------------>
+                                  <!-- <p *ngIf="hasJoinThechat" class="text-center">
+                                    <b style="color:green;">{{chatMsg.user.name}}   has joined the conversation</b>
+                                  </p> -->
+                              </div>
+
+                            </div>
+
+                        </div>
+                        </div>
+                      </div>
+                      <!---------------------- messages input ------------>
+                      <div class="chat-message-input">
+                            <div class="input-icons">
+                                    <!-- upload FILE -->
+                                    <input
+                                          class="hidden-input"
+                                          id="myInput" type="file"
+                                          #nativeFileInput
+                                          onclick="this.value = null"
+                                          [accept]="['.doc','.docx','.jpg','.jpeg','.pdf','.png','.xls','.xlsx','.mp4']"
+                                          style="visibility:hidden"
+                                          ng-file-model=""
+                                          (change)="uploadFile($event)"  />
+                                    <span onclick="$('#myInput').click();" class="attachImageForCommentsIcon blue-2 right-position material-icons" class="glyphicon glyphicon-paperclip"></span>
+
+                            </div>
+                              <input matInput placeholder={{chatRoomLocalization.messagePlaceHolder}} name="text" [(ngModel)]="text" (keyup.enter)="submitChatText()" >
+                            <div class="input-icons" (click)="submitChatText()">
+                                  <span class="glyphicon glyphicon-send"></span>
+                            </div>
+                      </div>
+
+              </li>
+              <!----------------- chat box list -------------------------------------------------------------->
+              <li>
+                <mat-sidenav position="end" mode="side" opened *ngIf="(chatRoomChatUsers)?.length ">
+                  <mat-card>
+
+                        <!-- MEMBRE DU CHATROOM SELECTIONNE  --->
+
+                     <app-ng-chat
+                                    (onMessagesSeen)="privateChatBoxReceiveMessage($event)"
+                                    (onParticipantChatClosed) = "privateChatBoxClosed($event)"
+
+                                    (historyEvent)="loadPrivateChatHistory($event)"
+                                    [adapter]="chatAdapter"
+                                    [groupAdapter]="myGroupAdapter"
+                                    [userId]="chatUserId"
+                                    [historyEnabled]="chatHistoryEnabled"
+                                    [historyPageSize]="chatHistoryPageSize"
+                                    [hideFriendsList]="chatHideFriendsList">
+                  </app-ng-chat>
+
+
+                  </mat-card>
+                </mat-sidenav>
+              </li>
+          </ul>
+
+      </div>
+  </div>
+</body>
+
+
+
+
+
+
+
+
+
+<!-- <app-ng-chat *ngIf="chatAdapter"  [adapter]="chatAdapter" [userId]="999" [historyEnabled]="true" [historyPageSize]="4" [hideFriendsList]="false"></app-ng-chat> -->

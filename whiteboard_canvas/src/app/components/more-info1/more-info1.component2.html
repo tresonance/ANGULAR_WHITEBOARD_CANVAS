@@ -1,0 +1,71 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-6 illustration-left hidden-xs-down not-visible">
+
+    </div>
+    <div class="col-md-6 illustration-right">
+      <div class="login-content">
+        <h2 class="">EDUSHARE</h2>
+        <p class="text-muted">
+          L'éducation en peer-to-peer.
+        </p>
+        <!--  FLASH MESSAGE  --->
+        <div class="alert alert-info"  *ngIf="showsuccessFullyMessage">
+              Submitted Successfully
+        </div>
+        <form [formGroup]="anniversaire" (validSubmit)="onSubmit()">
+          <!-- PREVENT RESUBMISSION --->
+          <input type="hidden" formControlName="$key">
+          <div class="form-row">
+            <div class="form-group col-md-12">
+              <!--<label for="inputCity">Ville</label>-->
+              <input type="text" class="form-control" id="inputUsername" placeholder="Pseudo" formControlName="Pseudo">
+            </div>
+            <div class='col-md-12'>
+                <p>Date de naissance</p>
+            </div>
+            <div class='form-group col-md-4'>
+              <div class="form-group">
+                <label for="exampleFormControlSelect1">Jour</label>
+                <select class="form-control" id="exampleFormControlSelect1" formControlName="Day">
+                  <option *ngFor="let day of date; " [value]="day.num">{{day.num}}</option>
+                </select>
+
+              </div>
+            </div>
+            <div class='form-group col-md-4'>
+              <div class="form-group">
+                <label for="exampleFormControlSelect1">Mois</label>
+                <select class="form-control" id="exampleFormControlSelect1" formControlName="Month">
+                  <option *ngFor="let month of months; " [value]="month.num">{{month.num}}</option>
+                </select>
+
+              </div>
+            </div>
+            <div class='form-group col-md-4'>
+              <div class="form-group">
+                <label for="exampleFormControlSelect1">Année</label>
+                <select class="form-control" id="exampleFormControlSelect1" formControlName="Year">
+                  <option *ngFor="let year of date" [value]="year.num">{{year.num + 1990}}</option>
+                </select>
+
+              </div>
+            </div>
+
+          </div>
+          <br>
+          <div class="buttons">
+
+            <button type="submit" class="btn btn-secondary">Enregistrer</button>
+
+          </div>
+        </form>
+
+      </div>
+
+    </div>
+  </div>
+</div>
+<script>
+
+</script>

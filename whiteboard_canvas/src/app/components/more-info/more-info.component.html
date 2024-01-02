@@ -1,0 +1,138 @@
+<div class="container">
+  <div class="row">
+      <div class="col-md-6 illustration-left hidden-xs-down not-visible">
+
+      </div>
+      <div class="col-md-6 illustration-right">
+        <div class="login-content">
+            <h2 class="">EDUSHARE</h2>
+            <p class="text-muted">
+                L'éducation en peer-to-peer.
+              </p>
+              <!--  FLASH MESSAGE  --->
+              <div class="alert alert-info"  *ngIf="showsuccessFullyMessage">
+                    Submitted Successfully
+              </div>
+            <form [formGroup]="moreInfo2" (validSubmit)="onSubmit()">
+              <!-- PREVENT RESUBMISSION --->
+              <input type="hidden" formControlName="$key">
+                <div class="form-row">
+                    <div class="form-group col-md-6">
+                      <label for="inputCity">Ville</label>
+                      <input type="text" class="form-control" id="inputCity" placeholder="Ville" formControlName="Ville" >
+                    </div>
+                    <div class="form-group col-md-4">
+                      <label for="inputState">École</label>
+                      <select id="inputState" class="form-control" formControlName="Ecole" >
+                        <option *ngFor="let ecole of ecoles" [value]="ecole.name"  >
+                            {{ ecole.name}}
+                        </option>
+                      </select>
+                    </div>
+                    <!-- Grid column -->
+                    <div class="col-md-12">
+                        <ul class="nav md-pills nav-justified pills-deep-purple pills-rounded select-option1">
+                            <li class="nav-item">
+                              <a class="nav-link active"  data-toggle="tab" href="#" (click)="onDisplayClasses($event)" role="tab">Collège</a>
+                            </li>
+                            <li class="nav-item">
+                              <a class="nav-link"  data-toggle="tab"   href="#" (click)="onDisplayClasses($event)" role="tab">Lycée</a>
+                            </li>
+                            <li class="nav-item">
+                              <a class="nav-link"  data-toggle="tab"   href="#" (click)="onDisplayClasses($event)" role="tab">Supérieur</a>
+                            </li>
+                          </ul>
+                      </div>
+                      <div class="col-md-12" *ngIf="clickedNiveau === 0">
+                          <ul class="nav md-pills nav-justified pills-deep-purple pills-rounded select-option2">
+                            <li class="nav-item">
+                              <a class="nav-link" data-toggle="tab" href="#" (click)="onGetClasses($event)" role="tab">6 ème</a>
+                            </li>
+                              <li class="nav-item">
+                                <a class="nav-link" data-toggle="tab" href="#" (click)="onGetClasses($event)" role="tab">5 ème</a>
+                              </li>
+                              <li class="nav-item">
+                                <a class="nav-link" data-toggle="tab" href="#" (click)="onGetClasses($event)" role="tab">4 ème</a>
+                              </li>
+                              <li class="nav-item">
+                                  <a class="nav-link" data-toggle="tab" href="#" (click)="onGetClasses($event)" role="tab">3 ème</a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="col-md-12" *ngIf="clickedNiveau === 1">
+                            <ul class="nav md-pills nav-justified pills-deep-purple pills-rounded select-option2">
+                              <li class="nav-item">
+                                <a class="nav-link" data-toggle="tab" href="#" (click)="onGetClasses($event)" role="tab">2 nde</a>
+                              </li>
+                                <li class="nav-item">
+                                  <a class="nav-link" data-toggle="tab" href="#" (click)="onGetClasses($event)" role="tab">1 ère</a>
+                                </li>
+                                <li class="nav-item">
+                                  <a class="nav-link" data-toggle="tab" href="#" (click)="onGetClasses($event)" role="tab">Tle</a>
+                                </li>
+                              </ul>
+                          </div>
+                          <div class="col-md-12" *ngIf="clickedNiveau === 2">
+                              <ul class="nav md-pills nav-justified pills-deep-purple pills-rounded select-option2">
+                                <li class="nav-item">
+                                  <a class="nav-link" data-toggle="tab" href="#" (click)="onGetClasses($event)" role="tab">Prépa</a>
+                                </li>
+                                  <li class="nav-item">
+                                    <a class="nav-link" data-toggle="tab" href="#" (click)="onGetClasses($event)" role="tab">Licence</a>
+                                  </li>
+                                  <li class="nav-item">
+                                    <a class="nav-link" data-toggle="tab" href="#" (click)="onGetClasses($event)" role="tab">Master</a>
+                                  </li>
+                                  <li class="nav-item">
+                                    <a class="nav-link" data-toggle="tab" href="#" (click)="onGetClasses($event)" role="tab">Doctorat</a>
+                                  </li>
+                                </ul>
+                            </div>
+                        <div class="col-md-12 best-class">
+                            <p>Matière préférée</p>
+                        </div>
+
+                        <div class="col-md-6 form-group">
+                          <label for="matière1">Premier choix</label>
+                            <select title="Matière préférée" id="matière1"class="best-class" formControlName="Choix1">
+                              <option *ngFor="let choix of lesChoix" [value] = "choix.name">{{choix.name}}</option>
+                              <!-- <option [value] = "Mathematiques">Mathématiques</option>
+                              <option [value] = "Physique">Physique</option>
+                              <option [value] = "SVT/option">SVT/option</option>
+                              <option [value] = "Francais">Français</option>
+                              <option [value] = "Histoire/Geographie">Histoire/Géographie</option>
+                              <option [value] = "Anglais">Anglais</option> -->
+                            </select>
+
+                        </div>
+                        <div class="col-md-6 form-group">
+                            <label for="matière1">Second choix</label>
+                              <select title="Matière préférée" id="matière1"class="best-class" formControlName="Choix2">
+                                  <option *ngFor="let choix of lesChoix" [value] = "choix.name">{{choix.name}}</option>
+                                <!-- <option [value] = "Mathematique">Mathématiques</option>
+                                <option [value] = "Physique">Physique</option>
+                                <option  [value] = "SVT/option">SVT/option</option>
+                                <option [value] = "Francais">Français</option>
+                                <option [value] = "Histoire/Geographie">Histoire/Géographie</option>
+                                <option [value] = "Anglais">Anglais</option> -->
+                              </select>
+
+                          </div>
+                      <!-- Grid column -->
+                </div>
+
+                <br>
+                <div class="buttons">
+
+                  <button type="submit" class="btn btn-secondary">Enregistrer</button>
+
+                </div>
+              </form>
+        </div>
+
+      </div>
+  </div>
+</div>
+<script>
+
+</script>

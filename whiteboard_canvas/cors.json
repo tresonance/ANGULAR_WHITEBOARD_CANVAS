@@ -1,0 +1,7 @@
+[
+  {
+    "origin": ["http://localhost:4200/#/chatrooms/chat-page"],
+    "method": ["GET"],
+    "maxAgeSeconds": 3600
+  }
+]

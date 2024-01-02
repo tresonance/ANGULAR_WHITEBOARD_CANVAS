@@ -1,0 +1,14 @@
+<!-- <input
+    [style.background]="color1"
+    [(colorPicker)]="color1"
+    (colorPickerChange)="onChangeColor($event)"
+    [cpOKButton]="'true'"
+    [cpCancelButton] ="'true'"
+    /> -->
+
+
+    <div  class="canvas-whiteboard-colorpicker-wrapper">
+                <div (click)="selectColor('transparent')" class="transparent-color">Transparent</div>
+                <canvas #canvaswhiteboardcolorpicker class="canvas-whiteboard-colorpicker" width="284" height="155"
+                        (click)="selectColor(determineColorFromCanvas($event))"></canvas>
+      </div>

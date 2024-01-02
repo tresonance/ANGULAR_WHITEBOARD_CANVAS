@@ -1,0 +1,3 @@
+<div class="canvas-whiteboard-shape-selector-wrapper" #shapesContainer *ngIf="showShapeSelector">
+        <canvas class="selectionCanvas" #canvasArray width="50px" height="50px"  *ngFor="let shape of registeredShapes | async" (click)="selectShape(shape)" ></canvas>
+</div>

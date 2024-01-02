@@ -1,0 +1,95 @@
+<div style="width:20%;">
+<mat-card>
+<mat-tab-group>
+  <mat-tab>
+    <ng-template mat-tab-label>
+      <mat-icon matListIcon>forum</mat-icon>
+    </ng-template>
+    <mat-list class="conversations">
+    <!-- LIST DES FORUMS ---------->
+    <mat-list-item *ngFor="let room of chatRooms" (click)="selectChatRoom(room)" [ngClass]="{'chat-room-joined' : isChatRoomJoined(room)}" >
+        <mat-icon matListIcon>forum</mat-icon>
+        <p>{{room.name}}</p>
+      </mat-list-item>
+    <!--- --------->
+    </mat-list>
+  </mat-tab>
+</mat-tab-group>
+</mat-card>
+</div>
+
+<mat-sidenav-container class="container">
+  <mat-sidenav mode="side" opened>
+
+  </mat-sidenav>
+  <mat-sidenav position="end" mode="side" opened *ngIf="(chatRoomChatUsers)?.length ">
+    <mat-card>
+
+          <!-- MEMBRE DU CHATROOM SELECTIONNE  --->
+
+       <app-ng-chat   (messageEvent)="receiveMessage($event)" (historyEvent)="loadPrivateChatHistory($event)" [adapter]="chatAdapter"  [groupAdapter]="myGroupAdapter"  [userId]="chatUserId" [historyEnabled]="chatHistoryEnabled" [historyPageSize]="chatHistoryPageSize" [hideFriendsList]="chatHideFriendsList"></app-ng-chat>
+
+        <!--  <mat-list class="members">
+              <mat-list-item *ngFor="let roomUser of chatRoomChatUsers">
+                <p> <a  [routerLink]="" (click)="openChatDialog($event, roomUser);" ><span class="dot"></span>{{roomUser.email}}</a></p>
+              </mat-list-item>
+          </mat-list>  -->
+          <!-- --->
+
+    </mat-card>
+  </mat-sidenav>
+  <section  class="empty-conversation" *ngIf="!chatRoom">
+    <h3 class="mat-display-1">{{chatRoomLocalization.selectChatRoomMessage}}</h3>
+  </section>
+  <section *ngIf="chatRoom">
+    <div class="mat-typography conversation-header">
+        <!-- NOMBRE PERSONNE CONNECTE-->
+        <div class="mat-typography conversation-header">
+          <h2>
+            <mat-icon>forum</mat-icon>
+              {{chatRoom.name}}</h2>
+              <p>
+                <mat-icon >account_circle</mat-icon>
+                  {{ (chatRoomChatUsers)?.length }} <span>&nbsp; {{chatRoomLocalization.title}}</span> <span *ngIf="(chatRoomChatUsers)?.length > 1">s</span>
+              </p>
+          </div>
+        <!-- -->
+    </div>
+    <mat-divider></mat-divider>
+    <mat-list dense class="conversation-history mat-typography">
+        <!--DISPLAY HISTORY  -->
+        <p *ngIf="hasJoinThechat" class="text-center">
+            <b style="color:green;">{{chatRoomChatUser.email}}   {{chatRoomLocalization.flashMessage}}</b>
+        </p>
+          <mat-list-item  *ngFor="let chatMsg of chatRoomHistories; index as i" [dir]="chatMsg.user?.email === chatRoomChatUser.email ? 'rtl' : 'ltr'" >
+            <img *ngIf="chatMsg.messageType == 'TEXT'" matListAvatar matTooltip="{{chatMsg.user?.email}}" src="https://randomuser.me/api/portraits/thumb/lego/{{i}}.jpg"
+              />
+              <!-- <p class="chat-timestamp">({{chat.timestamp}}): </p> -->
+              <p *ngIf="chatMsg.messageType == 'TEXT'" [dir]="'ltr'">{{chatMsg.message}}</p>
+              <p  class="chat-image" *ngIf="isImageChat(chatMsg)"><img src="{{(chatMessage)?.downloadUrl}}"/></p>
+              <p  class="chat-image" *ngIf="isFileChat(chatMsg)"><img src="{{(chatMessage)?.downloadUrl}}"/></p>
+
+              <!-- <p *ngIf="hasJoinThechat" class="text-center">
+                  <b style="color:green;">{{chatMsg.user.name}}   has joined the conversation</b>
+              </p> -->
+          </mat-list-item>
+        <!-- -->
+    </mat-list>
+    <div class="conversation-input">
+      <!-- upload FILE -->
+      <input id="myInput" type="file" style="visibility:hidden" ng-file-model="" (change)="uploadFile($event)" accept=".png,.jpg" />
+      <i onclick="$('#myInput').click();" class="attachImageForCommentsIcon blue-2 right-position material-icons">image</i>
+      <!-- <progress max="100" [value]="(uploadProgress | async)"></progress> -->
+
+      <mat-divider></mat-divider>
+      <mat-form-field class="full-width">
+        <input matInput placeholder={{chatRoomLocalization.messagePlaceHolder}} name="text" [(ngModel)]="text" (keyup.enter)="submitChat()" >
+        <mat-icon matSuffix (click)="submitChat()">send</mat-icon>
+      </mat-form-field>
+
+    </div>
+  </section>
+
+</mat-sidenav-container>
+
+<!-- <app-ng-chat *ngIf="chatAdapter"  [adapter]="chatAdapter" [userId]="999" [historyEnabled]="true" [historyPageSize]="4" [hideFriendsList]="false"></app-ng-chat> -->

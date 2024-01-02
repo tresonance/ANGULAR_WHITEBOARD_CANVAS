@@ -1,0 +1,3 @@
+pour la representation graphique des molecule car mhchem latex peut pas dessiner les molecules
+
+sites: 'https://web.chemdoodle.com/'

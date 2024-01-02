@@ -1,0 +1,137 @@
+<body>
+  <div class="header-container">
+      <div class="header">
+          <div class="logo"  >
+              <div style="width:25%; height:25%; margin-left:-3%; margin-top:-1%; ">
+                  <a [routerLink]="['/loni']" >
+                      <img src="../../../assets/img/accueil2/logo.png" alt="loni" style="width:40%; height:480%; " />
+                      <span style="font-weight:bold; margin-left:-19px; font-family:cursive, sans-serif">Loni</span>
+                      <div style="font-size:0.5em;  position:absolute;  width: 140px; display:block; top:29px; left:80px;">Les cours et suivi particuliers</div>
+                  </a>
+              </div>
+          </div> <!-- LOGO end here -->
+
+          <div id="menu">
+              <ul id="nav">
+                  <li><a  [routerLink]="['/loni']" >Accueil</a></li>
+                  <li><a  [routerLink]="['/a_propos']" >A propos</a></li>
+                  <!--<li><a href="#" target="_self" >A Propos</a></li> -->
+                  <!--<li><a href="#" target="_self" >Qui suis je?</a></li>-->
+                  <li><a [routerLink]="['/infos-services']"  class="sub_menu_after_flag">Infos & Services</a>
+                      <ul class="sub_menu_before1_flag">
+                          <!-- <li><a href="#" target="_self" >Qui-suis je?</a></li> -->
+                          <li><a [routerLink]="['/infos-services']" >Cours particuliers</a>
+                            <ul >
+                                  <li><a [routerLink]="['/infos-services/?cours-domicile']" class="sub_menu_before2_flag">Cours à domicile</a>
+                                  <!--<li><a [routerLink]="['/infos-services/cours/cours-ligne']" >Cours en ligne</a>-->
+                                  <li><a [routerLink]="['/infos-services/?cours-intensifs']" >Cours intensifs</a>
+                                  <li><a [routerLink]="['/infos-services/?cours-live']" >cours en live</a>
+                                  <li><a [routerLink]="['/infos-services/?cours-ligne']" >cours en ligne</a>
+                            </ul>
+                        </li>
+                        <li><a [routerLink]="['/infos-services/?cours-suivi']" >Cours et suivi</a>
+                        <li><a  [routerLink]="['/infos-services/?commentaires']">Les avis</a>
+                      </ul>
+                </li>
+                <li><a [routerLink]="['/contact']" >Contact</a></li>
+                <li><a [routerLink]="['/register']" ><span class="show-reg-form-signup hidden-xs"><i style="margin:5px;" class="fa fa-user-secret"></i>Sign up</span></a></li>
+            </ul>
+        </div> <!-- MENU end here -->
+    </div><!-- HEADER end here -->
+  </div> <!-- HEADER-CONTAINER end here -->
+  <!------------------------------------------------------------- LOGIN ----------------------------------------------->
+  <div class="login-container" style="">
+        <ul>
+          <li class="login-container-list" id="login-container-list-id"></li>
+          <li class="login-container-list" id="login-container-list-id2">
+
+              <table class="first-table">
+                <tbody>
+                  <tr><div style="background-color:rgba(123,179,190, 0.4);">
+                    <a href="#"><td class="reseaux-image-container"><img src="http://pluspng.com/img-png/google-logo-png-open-2000.png" alt=""></td><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Continuer avec Google</td></a>
+                  </div></tr>
+                  <tr><div style="background-color:rgba(123,179,190, 0.3);">
+                    <a href="#"><td class="reseaux-image-container"><img src="https://banner2.cleanpng.com/20180920/uck/kisspng-logo-facebook-aylmer-computer-icons-brand-facebook-icon-social-media-icon-png-and-vector-5ba33cfca09f68.0357049415374246366579.jpg" alt=""></td><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Continuer avec Facebook</td></a>
+                  </div></tr>
+                </tbody>
+              </table>
+
+              <form [formGroup]="registerForm" id="form-signup" (validSubmit)="onSubmit()" style="">
+              <table class="second-table">
+                <tbody>
+
+                  <tr><div><td><label for="email"><img src="https://cdn.imgbin.com/25/18/18/imgbin-computer-icons-envelope-icon-design-mail-logo-envelope-2k51EK6C47M1HdvRu6YB2n60S.jpg" alt=""></label></td> <td>
+                    <input type="email" class="form-control" id="email"  aria-describedby="emailHelp" placeholder="Email" formControlName="email">
+                  </td></div></tr>
+                  <tr><div><td><label for="password"><img src="https://www.pngfind.com/pngs/m/202-2021817_password-icon-png-forgot-password-icon-transparent-png.png" alt=""></label></td>  <td><input type="password" class="form-control"  id="password" (click)="cleanErrorMessage()" placeholder="Mot de passe" formControlName="password"></td></div></tr>
+                  <!-- En cliquant sur Terminer, vous acceptez les Conditions générales d'utilisation et la politique de confidentialité de Kartable. -->
+                </tbody>
+              </table>
+
+              <table class="third-table">
+                <tbody>
+                  <tr class="button-valider-row" ><div class="button-valider"><td><a style="text-align:center;" (click)="onSubmit('Connection')">Terminer</a></td></div></tr>
+                  <!--<tr><td style="font-size:0.5em;">En cliquant sur Terminer, vous acceptez les Conditions générales d'utilisation et la politique de confidentialité de Kartable.</td></tr> -->
+                </tbody>
+              </table>
+              </form>
+              <table class="fourth-table">
+                <tbody>
+                  <tr><div><td><a  href="#">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Password oublié ?</a></td>  <td><a [routerLink]="['/register']">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Créer un compte</a></td></div></tr>
+                </tbody>
+              </table>
+          </li>
+        </ul>
+        <!--------------------- TERM CONDITION  EN DISPLAY FLOAT---------------------------->
+        <!--<label class="terms-condition">
+              <input type="checkbox" name="" value="">
+              <span></span>
+              En cliquant sur Terminer, vous acceptez les Conditions <br />générales d'utilisation et la politique de confidentialité de Loni.
+        </label> -->
+  </div>
+<!---------------------------------------------------------- END LOGIN ------------------------------------------------->
+<div class="content-container" style="background:#000; color:white; margin-top:7px;">
+  <div class="content">
+    <div class="footer">
+
+      <div class="footer-sitemap">
+        <div class="footer-section">
+          <b>Nos compétences</b><br /><br />
+          <a href="#">Maths séconde - terminale</a><br />
+          <a href="#">Physique séconde - terminale</a><br />
+          <a href="#">Chimie séconde - terminale</a><br />
+          <a href="#">Initiation à la programmation C/python</a><br />
+        </div>
+
+        <div class="footer-section">
+          <b></b><br /><br />
+          <a href="#"></a><br />
+          <a href="#"></a><br />
+          <a href="#"></a>
+          <a href="#"></a><br />
+        </div>
+
+        <div class="footer-section">
+          <b></b><br /><br />
+          <a href="mailto:tresonance@hotmail.fr">Nous contacter</a><br />
+          <a href="#">Terms &amp; privacy</a><br />
+        </div>
+
+        <div class="footer-section">
+          <div class="social-media-links">
+            <b>Nous suivre:</b><br/><br />
+            <a href="http://www.facebook.com/SchoolYourself"><img src="//schoolyourself.org/images/facebook_icon.png" width="30"/></a>
+            <a href="https://plus.google.com/111095141647823369081/posts"><img src="//schoolyourself.org/images/gplus_icon.png" width="30"/></a>
+            <a href="http://twitter.com/SchoolYourself"><img src="//schoolyourself.org/images/twitter_icon.png" width="30"/></a>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="copyright">&copy; 2012-2015 School Yourself, Inc.<br/>
+        Icons from <a href="http://glyphicons.com">glyphicons.com</a> <a href="http://creativecommons.org/licenses/by/3.0/deed.en">(license)</a></div>
+    </div>
+  </div>
+</div>
+
+</body>

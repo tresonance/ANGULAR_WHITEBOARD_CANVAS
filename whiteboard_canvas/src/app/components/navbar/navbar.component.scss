@@ -1,0 +1,32 @@
+
+
+/**Dropdown inverse styling missing in Bootstrap*/
+
+.dropdown-menu-inverse {
+  background-color: #222222;
+  border-color: #080808;
+}
+
+.dropdown-menu-inverse>li>a {
+  color: #999999;
+}
+
+.dropdown-menu-inverse>li>a:hover {
+  background-color: #ffffff;
+  color: #000000;
+}
+
+.dropdown-menu-inverse>.divider {
+  background-color: #000000;
+}
+
+li a {
+  cursor: pointer;
+}
+
+.greeting {
+  color: white;
+  font-weight: bold;
+  padding: 15px;
+  display: block;
+}

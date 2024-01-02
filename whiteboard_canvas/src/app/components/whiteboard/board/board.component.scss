@@ -1,0 +1,27 @@
+#container {
+  width:100%;
+  height:100%;
+  margin:0;
+}
+
+.fillocolor-container,.strokecolor-container{
+    position:absolute;
+    top:10%;
+    left:22%;
+    width:50%;
+    padding:0;
+    text-align:center;
+}
+
+.canvas-component-container{
+  padding:0;
+  width: 100%;
+  height: 60%;
+  margin:1px;
+  border: 0.5px solid #e2e2e2;
+}
+
+.toolbar-container{
+  width:100%;
+  height:30%;
+}

@@ -1,0 +1,40 @@
+.chat {
+  text-align: left;
+}
+
+.chat-user {
+  color: darkblue;
+  font-weight: bold;
+}
+
+.chat-timestamp {
+  font-weight: lighter;
+  font-style: italic;
+}
+
+.chat-message, .chat-image, .chat-file {
+  font-weight: bold;
+  word-wrap: break-word;
+}
+
+.chat-image > img {
+  height: 50px;
+  width: auto;
+}
+
+.chat-image > img:hover {
+  height: auto;
+  width: auto;
+}
+
+.mychat {
+  background-color: lightgray;
+}
+
+.btn-emoji {
+  background: url(/assets/emoji.png);
+  background-repeat: no-repeat;
+  background-position-y: center;
+  background-color: #eee;
+  background-size: 24px;
+}

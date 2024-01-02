@@ -1,0 +1,73 @@
+<div id="toolbar-container">
+  <div id='toolbar'>
+
+  <!-- canvas preview -->
+  <button  (click)="emit_bool_openShapeSelectionPopUp()" >
+    <canvas #canvasWhiteboardShapePreview width="50px" height="50px"
+                    class="canvas-whiteboard-shape-preview-canvas"></canvas>
+  </button>
+
+  <button *ngIf="fillButtonEnabled" [ngStyle]="fillBottomBorderColor"  (click)="emit_bool_openFillColorPicker()"
+        class="canvas_whiteboard_button canvas_whiteboard_button-fill" type="button">
+        <i  aria-hidden="true" ></i> {{fillButtonText}}
+  </button>
+
+  <button *ngIf="strokeButtonEnabled" [ngStyle]="strokeBottomBorderColor"  (click)="emit_bool_openStrokeColorPicker($event)"
+        class="canvas_whiteboard_button canvas_whiteboard_button-stroke" type="button">
+        <i  aria-hidden="true"></i> {{strokeButtonText}}
+  </button>
+
+  <button *ngIf="drawButtonEnabled"  (click)="emit_bool_onDraw($event)"
+        [class.canvas_whiteboard_button-draw_animated]="isDrawing"
+                  class="canvas_whiteboard_button canvas_whiteboard_button-draw" type="button">
+        <i  aria-hidden="true"></i> {{drawButtonText}}
+  </button>
+
+
+  <button *ngIf="clearButtonEnabled" (click)="emit_bool_onClear($event)" type="button"
+        class="canvas_whiteboard_button canvas_whiteboard_button-clear">
+        <i  aria-hidden="true"></i> {{clearButtonText}}
+  </button>
+
+
+  <button *ngIf="undoButtonEnabled" (click)="emit_bool_onUndo()" type="button"
+        class="canvas_whiteboard_button canvas_whiteboard_button-undo">
+        <i  aria-hidden="true"></i> {{undoButtonText}}
+  </button>
+
+  <button *ngIf="redoButtonEnabled" (click)="emit_bool_onRedo()" type="button"
+        class="canvas_whiteboard_button canvas_whiteboard_button-redo">
+        <i  aria-hidden="true"></i> {{redoButtonText}}
+  </button>
+
+  <!--------------- connected friends list ---------------->
+  <button  (click)="onAddFriends($event)" type="button"
+        class="canvas_whiteboard_button canvas_whiteboard_button-add">
+        <i  aria-hidden="true"></i> <b>{{inviteFriendsButtonText}}</b>
+  </button>
+
+  <div class="" *ngIf="webcamOn" [ngStyle]="{'z-index': '3', 'width': '140px' , 'display':'inline-block', 'position':'absolute', 'border':'1px solid blue', 'top':'99%', 'left':'68%'}">
+      <ul  [ngStyle]="{'width':'100%', 'height':'auto' }">
+          <li *ngFor="let online_user of connected_Users; let index = i" [ngStyle]="{'cursor':'pointer', 'width':'auto', 'font-size':'12px','margin-top':'8px','text-align':'center', 'list-style-type': 'none'}" (click)="emit_bool_onAddFriends(online_user)" >
+            <input type="checkbox" [(ngModel)]="online_user.checked">
+            {{online_user.pseudo}}
+          </li>
+      </ul>
+  </div>
+  <!------------------ camera with friends list ----------->
+  <!-- <button *ngIf="camDataButtonEnabled" (click)="emit_camera_status($event)" type="button"
+        class="canvas_whiteboard_button canvas_whiteboard_button-camera">
+        <i  aria-hidden="true"></i> <b>{{cameraButtonText}}</b>
+  </button> -->
+  <!-- <div class="" *ngIf="cameraButtonEnabled" [ngStyle]="{'z-index': '2', 'width': '60px' , 'display':'inline-block', 'position':'absolute', 'border':'1px solid blue', 'top':'90%', 'left':'73%'}">
+        <div class="actionBtn" style="padding:12px; font-size:1.2em; margin:12px; cursor:pointer" (click)="emit_bool_triggerSnapshot($event);" title="Take Picture">📸</div>
+        <div class="actionBtn" style="padding:12px; font-size:1.2em; margin:12px; cursor:pointer" (click)="emit_bool_showNextWebcam($event);" title="Switch Camera">🔁</div>
+  </div> -->
+  <!--------------------------------------------------------->
+  <button *ngIf="saveDataButtonEnabled" (click)="emit_bool_onGotoProfil($event)" type="button"
+        class="canvas_whiteboard_button canvas_whiteboard_button-profil">
+        <i  aria-hidden="true"></i> <b>{{profilButtonText}}</b>
+  </button>
+
+  </div>
+</div>

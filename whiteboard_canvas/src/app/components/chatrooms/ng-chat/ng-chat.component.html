@@ -1,0 +1,133 @@
+<!-- <ng-chat  [adapter]="chatAdapter" [userId]="999" [historyEnabled]="true" [historyPageSize]="4" [hideFriendsList]="false"></ng-chat> -->
+<link *ngIf="customTheme" rel="stylesheet" [href]='sanitizer.bypassSecurityTrustResourceUrl(customTheme)'>
+
+<div *ngIf="!hideFriendsList" id="ng-chat-people" [ngClass]="{'primary-outline-color': true, 'primary-background': true, 'ng-chat-people-collapsed': isCollapsed}">
+        <a href="javascript:void(0);" class="ng-chat-title secondary-background shadowed" (click)="onChatTitleClicked($event)">
+            <span>
+                {{localization?.title}}
+            </span>
+        </a>
+        <div *ngIf="currentActiveOption" class="ng-chat-people-actions" (click)="onFriendsListActionCancelClicked()">
+            <a href="javascript:void(0);" class="ng-chat-people-action">
+                <i class="remove-icon"></i>
+            </a>
+            <a href="javascript:void(0);" class="ng-chat-people-action" (click)="onFriendsListActionConfirmClicked()">
+                <i class="check-icon"></i>
+            </a>
+        </div>
+        <input *ngIf="searchEnabled" id="ng-chat-search_friend" class="friends-search-bar" type="search" [placeholder]="localization?.searchPlaceholder" [(ngModel)]="searchInput" />
+        <ul id="ng-chat-users" *ngIf="!isCollapsed" [ngClass]="{'offset-search': searchEnabled}">
+            <li *ngFor="let user of filteredParticipants" >
+                <input
+                    *ngIf="currentActiveOption && currentActiveOption.validateContext(user.participant)"
+                    type="checkbox"
+                    class="ng-chat-users-checkbox"
+                    (change)="onFriendsListCheckboxChange(user, $event.target.checked)"
+                    [checked]="isUserSelectedFromFriendsList(user)"
+                />
+                <div [ngClass]="{'ng-chat-friends-list-selectable-offset': currentActiveOption, 'ng-chat-friends-list-container': true}" (click)="openChatWindow(user, true, true)">
+                    <div *ngIf="!user.participant.avatar" class="icon-wrapper">
+                        <i class="user-icon"></i>
+                    </div>
+                    <img *ngIf="user.participant.avatar" alt="" class="avatar" height="30" width="30"  [src]="sanitizer.bypassSecurityTrustResourceUrl('https://68.media.tumblr.com/avatar_d28d7149f567_128.png')"/>
+                    <strong title="{{user.participant.name}}">{{user.participant.name}}</strong>
+                    <span [ngClass]="{'ng-chat-participant-status': true, 'online': user.participant.participantStatus == 'ONLINE', 'busy': user.participant.participantStatus == 'BUSY', 'away': user.participant.participantStatus == 'AWAY', 'offline': user.participantStatus == 'OFFLINE'}" title="{{getStatusTitle(user.participant.participantStatus)}}"></span>
+                    <span *ngIf="unreadMessagesTotalByParticipant(user).length > 0" class="ng-chat-unread-messages-count unread-messages-counter-container primary-text">{{unreadMessagesTotalByParticipant(user)}}</span>
+                </div>
+            </li>
+        </ul>
+</div>
+<div  *ngFor="let window of windows; let i = index" [ngClass]="{'ng-chat-window': true, 'primary-outline-color': true, 'ng-chat-window-collapsed': window.isCollapsed}" [ngStyle]="{'right': (!hideFriendsList ? friendsListWidth : 0) + 20 + windowSizeFactor * i + 'px', 'background-color':'rgb(192, 192, 192)'}">
+
+  <ng-container *ngIf="window.isCollapsed">
+          <div class="ng-chat-title secondary-background">
+              <div class="ng-chat-title-visibility-toggle-area" (click)="onChatWindowClicked(window)">
+                  <strong title="{{window.participant.name}}" >
+                      {{window.participant.name}}
+                  </strong>
+                  <span [ngClass]="{'ng-chat-participant-status': true, 'online': window.participant.participantStatus == 'ONLINE', 'busy': window.participant.participantStatus == 'BUSY', 'away': window.participant.participantStatus == 'AWAY', 'offline': window.participant.participantStatus == 'OFFLINE'}" title="{{getStatusTitle(window.participant.participantStatus)}}"></span>
+                  <span *ngIf="unreadMessagesTotal(window).length > 0" class="ng-chat-unread-messages-count unread-messages-counter-container primary-text">{{unreadMessagesTotal(window)}}</span>
+              </div>
+              <a href="javascript:void(0);" class="ng-chat-close primary-text" (click)="onCloseChatWindow(window)">X</a>
+          </div>
+    </ng-container>
+
+    <ng-container *ngIf="!window.isCollapsed">
+           <div class="ng-chat-title secondary-background">
+               <div class="ng-chat-title-visibility-toggle-area" (click)="onChatWindowClicked(window)">
+                   <strong *ngIf="!window.group" title="{{window.participant.name}}">
+                       {{window.participant.name}}
+                   </strong>
+                   <strong *ngIf="window.group" title="{{window.participant.name}}">
+                       {{window.group.name}}
+                   </strong>
+
+                     <span [ngClass]="{'ng-chat-participant-status': true, 'online': window.participant.participantStatus == 'ONLINE', 'busy': window.participant.participantStatus == 'BUSY', 'away': window.participant.participantStatus == 'AWAY', 'offline': window.participant.participantStatus == 'OFFLINE'}" title="{{getStatusTitle(window.participant.participantStatus)}}"></span>
+                   <span *ngIf="unreadMessagesTotal(window).length > 0" class="ng-chat-unread-messages-count unread-messages-counter-container primary-text">{{unreadMessagesTotal(window)}}</span>
+               </div>
+               <a href="javascript:void(0);" class="ng-chat-close primary-text" (click)="onCloseChatWindow(window)">X</a>
+                <!--  this is option for making group chat box  --->
+                <!-- <app-ng-chat-options [ngClass]="'ng-chat-options-container'" [options]="defaultWindowOptions(window)" [chattingTo]="window" [(activeOptionTracker)]="currentActiveOption"></app-ng-chat-options> -->
+                 <!--------------------------------------------->
+           </div>
+           <div #chatMessages class="ng-chat-messages primary-background">
+               <div *ngIf="window.isLoadingHistory" class="ng-chat-loading-wrapper">
+                   <div class="loader">Loading history...</div>
+               </div>
+               <div *ngIf="hasPagedHistory && window.hasMoreMessages && !window.isLoadingHistory" class="ng-chat-load-history">
+                 <a class="load-history-action" (click)="fetchMessageHistory(window)">{{localization.loadMessageHistoryPlaceholder}}</a>
+               </div>
+               <div *ngFor="let message of window.messages; let i = index" [ngClass]="{'ng-chat-message': true, 'ng-chat-message-received': message.user?.uuid != chatUser?.uuid}">
+
+                   <ng-container *ngIf="isAvatarVisible(window, message, i)">
+                       <div   *ngIf="!getChatWindowAvatar(window.participant, message, window.group)" class="icon-wrapper">
+                           <i class="user-icon"></i>
+                       </div>
+                       <img *ngIf="getChatWindowAvatar(window.participant, message, window.group)" alt="" class="avatar" height="30" width="30" [src]="sanitizer.bypassSecurityTrustResourceUrl(getChatWindowAvatar(window.participant, message))" />
+                       <span *ngIf="window.participant.participantType == 'GROUP'" class="ng-chat-participant-name">{{window.participant.name }}</span>
+                   </ng-container>
+                   <ng-container [ngSwitch]="message.messageType">
+                       <div *ngSwitchCase="'TEXT'" [ngClass]="{'sent-chat-message-container': message.user?.uuid == chatUser?.uuid, 'received-chat-message-container': message.user?.uuid !== chatUser?.uuid}">
+                            <span [innerHtml]="message.message | emojify:emojisEnabled | linkfy:linkfyEnabled"></span>
+                           <span *ngIf="showMessageDate && message.dateSent" class="message-sent-date">{{message.dateSent}}</span>
+                       </div>
+                       <div *ngSwitchCase="'FILE'" [ngClass]="{'file-message-container': true, 'received': message.fromId != chatUser?.uuid}">
+                           <div class="file-message-icon-container">
+                               <i class="paperclip-icon"></i>
+                           </div>
+                           <a class="file-details" [attr.href]="message.downloadUrl" target="_blank" rel="noopener noreferrer" (click)="markMessagesAsRead([message])" download>
+                               <span class="file-message-title" [attr.title]="message.message">{{message.message}}</span>
+                               <span *ngIf="message.fileSizeInBytes" class="file-message-size">{{message.fileSizeInBytes}} Bytes</span>
+                           </a>
+                       </div>
+                   </ng-container>
+               </div>
+           </div>
+
+           <div class="ng-chat-footer primary-outline-color primary-background">
+               <input #chatWindowInput
+                   type="text"
+                   [ngModel]="window.newMessage | emojify:emojisEnabled"
+                   (ngModelChange)="window.newMessage=$event"
+                   [placeholder]="localization.messagePlaceholder"
+                   [ngClass]="{'chat-window-input': true, 'has-side-action': fileUploadAdapter}"
+                   (keydown)="onChatInputTyped($event, window)"
+                   (blur)="toggleWindowFocus(window)"
+                   (focus)="toggleWindowFocus(window)"/>
+
+               <!-- File Upload -->
+               <ng-container ><!-- *ngIf="fileUploadAdapter"> -->
+                     <a *ngIf="!isUploadingFile(window)" class="btn-add-file" (click)="triggerNativeFileUpload(window)" >
+                         <span class="glyphicon glyphicon-open" title="Add file!"></span>
+                     </a>
+                     <input
+                         type="file"
+                         #nativeFileInput
+                         style="display: none;"
+                         [attr.id]="getUniqueFileUploadInstanceId(window)"
+                         (change)="onFileChosen(window)" />
+                     <div *ngIf="isUploadingFile(window)" class="loader"></div>
+                 </ng-container>
+           </div>
+       </ng-container>
+   </div>

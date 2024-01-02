@@ -1,0 +1,213 @@
+<body>
+  <div class="header-container">
+      <div class="header">
+          <div class="logo"  >
+              <div style="width:25%; height:25%; margin-left:-3%; margin-top:-1%; ">
+                  <a [routerLink]="['/loni']" >
+                      <img src="../../../assets/img/accueil2/logo.png" alt="loni" style="width:40%; height:480%; " />
+                      <span style="font-weight:bold; margin-left:-19px; font-family:cursive, sans-serif">Loni</span>
+                      <div style="font-size:0.5em;  position:absolute;  width: 140px; display:block; top:29px; left:80px;">Les cours et suivi particuliers</div>
+                  </a>
+              </div>
+          </div> <!-- LOGO end here -->
+
+          <div id="menu">
+              <ul id="nav">
+                  <li><a  [routerLink]="['/loni']" >Accueil</a></li>
+                  <li><a  [routerLink]="['/a_propos']" >A propos</a></li>
+                  <!--<li><a href="#" target="_self" >A Propos</a></li> -->
+                  <!--<li><a href="#" target="_self" >Qui suis je?</a></li>-->
+                  <li><a [routerLink]="['/infos-services']"  class="sub_menu_after_flag">Infos & Services</a>
+                      <ul class="sub_menu_before1_flag">
+                          <!-- <li><a href="#" target="_self" >Qui-suis je?</a></li> -->
+                          <li><a [routerLink]="['/infos-services']" >Cours particuliers</a>
+                            <ul >
+                                  <li><a [routerLink]="['/infos-services/?cours-domicile']" class="sub_menu_before2_flag">Cours à domicile</a>
+                                  <!--<li><a [routerLink]="['/infos-services/cours/cours-ligne']" >Cours en ligne</a>-->
+                                  <li><a [routerLink]="['/infos-services/?cours-intensifs']" >Cours intensifs</a>
+                                  <li><a [routerLink]="['/infos-services/?cours-live']" >cours en live</a>
+                                  <li><a [routerLink]="['/infos-services/?cours-ligne']" >cours en ligne</a>
+                            </ul>
+                        </li>
+                        <li><a [routerLink]="['/infos-services/?cours-suivi']" >Cours et suivi</a>
+                        <li><a  [routerLink]="['/infos-services/?commentaires']">Les avis</a>
+                      </ul>
+                </li>
+                <li><a [routerLink]="['/contact']" >Contact</a></li>
+                <li><a [routerLink]="['/login']"><span class="show-reg-form "><i style="margin:5px;" class="fa fa-sign-in"></i>Sign In</span></a></li>
+            </ul>
+        </div> <!-- MENU end here -->
+    </div><!-- HEADER end here -->
+  </div> <!-- HEADER-CONTAINER end here -->
+  <!------------------------------------------------------------- REGISTER ----------------------------------------------->
+  <div class="register-container" style="">
+    <div class="error-message">
+      <h4 class="" id="error-message-container">{{errorMessage}}</h4>
+    </div>
+
+    <!--  <h2>INSCRIPTION</h2>
+      <hr />
+
+      <table>
+        <tbody>
+          <tr>
+            <label class="status-register">
+                  <input type="checkbox" name="" value="">
+                  <span></span>
+                    Elève
+            </label>
+
+            <label class="status-register">
+                  <input type="checkbox" name="" value="">
+                  <span></span>
+                    Parent
+            </label>
+          </tr>
+        </tbody>
+      </table> -->
+        <!------------- END CHECKBOX -------------->
+      <form [formGroup]="registerForm" id="form-signup" (validSubmit)="onSubmit()">
+      <ul style="margin-top:5%;">
+        <li class="form-group-container">
+            <div >
+              <h2>Je complète mon inscrisption.</h2>
+
+                      <div class="">
+                      <!-- PREVENT RESUBMISSION --->
+                      <input type="hidden" formControlName="$key">
+                      </div>
+
+                      <div class="form-group">
+                          <label for="pseudo"><span class="glyphicon glyphicon-user"></span></label>
+                          <input type="text" class="form-control" id="pseudo"  aria-describedby="emailHelp" placeholder="Pseudo" formControlName="pseudo">
+                      </div>
+
+                      <div class="form-group">
+                          <label for="email"><span class="glyphicon glyphicon-envelope"></span></label>
+                          <input style="color:black;" type="email" class="form-control" id="email"  aria-describedby="emailHelp" value="{{email}}" placeholder="" formControlName="email">
+                      </div>
+
+                      <div class="form-group" >
+                        <div class='col-md-12'>
+                            <p>Date de naissance</p>
+                        </div>
+
+                        <div class='form-group col-md-4'>
+                          <div class="form-group">
+                            <label class="form-group-label" for="exampleFormControlSelect1">Jour</label>
+                            <select class="form-control" id="exampleFormControlSelect1" formControlName="day">
+                              <option *ngFor="let day of date; " [value]="day.num">{{day.num}}</option>
+                            </select>
+
+                          </div>
+                        </div>
+
+                        <div class='form-group col-md-4'>
+                          <div class="form-group">
+                            <label class="form-group-label" for="exampleFormControlSelect1">Mois</label>
+                            <select class="form-control" id="exampleFormControlSelect1" formControlName="month">
+                              <option *ngFor="let month of months; " [value]="month.num">{{month.num}}</option>
+                            </select>
+
+                          </div>
+                        </div>
+
+                        <div class='form-group col-md-4'>
+                          <div class="form-group">
+                            <label class="form-group-label" for="exampleFormControlSelect1">Année</label>
+                            <select class="form-control" id="exampleFormControlSelect1" formControlName="year">
+                              <option *ngFor="let year of date" [value]="year.num">{{year.num + 1990}}</option>
+                            </select>
+
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="form-group" >
+                      <!-- <span class="glyphicon glyphicon-envelope"></span><input type="text" name="" value="" placeholder="Classe:"> -->
+                      <!-- <label for="country" style="color:white;">&nbsp;&nbsp;&nbsp;Classe: </label> -->
+                      <span style="margin-right:5px;" class="glyphicon glyphicon-level-up"></span>
+                      <select id="country" name="" formControlName="classe"  >
+                        <option value=""> Classe</option>
+                        <option value="troisième">Troisième</option>
+                        <option value="seconde">Séconde</option>
+                        <option value="première-mathématiques">Première - Mathématiques</option>
+                        <option value="première-physique-chimie">Première - Phys/Chimie</option>
+                        <option value="première-informatique">Première - Num/Sce Informatique</option>
+                        <option value="terminale-maths">Terminale  Maths</option>
+                        <option value="terminale-physique-chimie">Terminale Phy-Chimie</option>
+                        <option value="terminale-isn">Terminale ISN</option>
+                      </select>
+                  </div>
+
+                  <div class="form-group" >
+                    En clicquant sur Compléter, vous accpetez nos <a [routerLink]="['/terms-condition']">&nbsp;&nbsp;termes et conditions d'utilisation.</a>
+                  </div>
+
+                  <div class="form-group" >
+                    <div class="buttons">
+
+                      <button type="button"  id="var_btn_inscription" class="btn btn-primary" (click)="onSubmit()">Compléter</button>
+
+                    </div>
+                    <!-- <input type="submit" name="" value="S'inscrire" (click)="onSubmit('Inscription')"> -->
+                  </div>
+              </div>
+              <!------------ END TERMS and CONDITION and Submit --------------->
+        </li>
+        <!---------------- END LEFT ---------------->
+        <li class="register-right-side">
+
+        </li>
+
+        <!--------------- END RIGHT ----------------->
+      </ul>
+      </form>
+  </div>
+
+<!---------------------------------------------------------- END REGISTER------------------------------------------------->
+<div class="content-container" style="background:#000; color:white; margin-top:7px;">
+  <div class="content">
+    <div class="footer">
+
+      <div class="footer-sitemap">
+        <div class="footer-section">
+          <b>Nos compétences</b><br /><br />
+          <a href="#">Maths séconde - terminale</a><br />
+          <a href="#">Physique séconde - terminale</a><br />
+          <a href="#">Chimie séconde - terminale</a><br />
+          <a href="#">Initiation à la programmation C/python</a><br />
+        </div>
+
+        <div class="footer-section">
+          <b></b><br /><br />
+          <a href="#"></a><br />
+          <a href="#"></a><br />
+          <a href="#"></a>
+          <a href="#"></a><br />
+        </div>
+
+        <div class="footer-section">
+          <b></b><br /><br />
+          <a href="mailto:tresonance@hotmail.fr">Nous contacter</a><br />
+          <a href="#">Terms &amp; privacy</a><br />
+        </div>
+
+        <div class="footer-section">
+          <div class="social-media-links">
+            <b>Nous suivre:</b><br/><br />
+            <a href="http://www.facebook.com/SchoolYourself"><img src="//schoolyourself.org/images/facebook_icon.png" width="30"/></a>
+            <a href="https://plus.google.com/111095141647823369081/posts"><img src="//schoolyourself.org/images/gplus_icon.png" width="30"/></a>
+            <a href="http://twitter.com/SchoolYourself"><img src="//schoolyourself.org/images/twitter_icon.png" width="30"/></a>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="copyright">&copy; 2012-2015 School Yourself, Inc.<br/>
+        Icons from <a href="http://glyphicons.com">glyphicons.com</a> <a href="http://creativecommons.org/licenses/by/3.0/deed.en">(license)</a></div>
+    </div>
+  </div>
+</div>
+
+</body>

@@ -1,0 +1,188 @@
+<body>
+  <div class="header-container">
+      <div class="header">
+          <div class="logo"  >
+              <div style="width:25%; height:25%; margin-left:-3%; margin-top:-1%; ">
+                  <a [routerLink]="['/loni']" >
+                      <img src="../../../assets/img/accueil2/logo.png" alt="loni" style="width:40%; height:480%; " />
+                      <span style="font-weight:bold; margin-left:-19px; font-family:cursive, sans-serif">Loni</span>
+                      <div style="font-size:0.5em;  position:absolute;  width: 140px; display:block; top:29px; left:80px;">Les cours et suivi particuliers</div>
+                  </a>
+              </div>
+          </div> <!-- LOGO end here -->
+
+          <div id="menu">
+              <ul id="nav">
+                  <li><a  [routerLink]="['/loni']" >Accueil</a></li>
+                  <li><a  [routerLink]="['/a_propos']" >A propos</a></li>
+                  <!--<li><a href="#" target="_self" >A Propos</a></li> -->
+                  <!--<li><a href="#" target="_self" >Qui suis je?</a></li>-->
+                  <li><a [routerLink]="['/infos-services']"  class="sub_menu_after_flag">Infos & Services</a>
+                      <ul class="sub_menu_before1_flag">
+                          <!-- <li><a href="#" target="_self" >Qui-suis je?</a></li> -->
+                          <li><a [routerLink]="['/infos-services']" >Cours particuliers</a>
+                            <ul >
+                                  <li><a [routerLink]="['/infos-services/?cours-domicile']" class="sub_menu_before2_flag">Cours à domicile</a>
+                                  <!--<li><a [routerLink]="['/infos-services/cours/cours-ligne']" >Cours en ligne</a>-->
+                                  <li><a [routerLink]="['/infos-services/?cours-intensifs']" >Cours intensifs</a>
+                                  <li><a [routerLink]="['/infos-services/?cours-live']" >cours en live</a>
+                                  <li><a [routerLink]="['/infos-services/?cours-ligne']" >cours en ligne</a>
+                            </ul>
+                        </li>
+                        <li><a [routerLink]="['/infos-services/?cours-suivi']" >Cours et suivi</a>
+                        <li><a  [routerLink]="['/infos-services/?commentaires']">Les avis</a>
+                      </ul>
+                </li>
+                <li><a [routerLink]="['/contact']" >Contact</a></li>
+                <li><a [routerLink]="['/login']"><span class="show-reg-form "><i style="margin:5px;" class="fa fa-sign-in"></i>Sign In</span></a></li>
+            </ul>
+        </div> <!-- MENU end here -->
+    </div><!-- HEADER end here -->
+  </div> <!-- HEADER-CONTAINER end here -->
+  <!------------------------------------------------------------- REGISTER ----------------------------------------------->
+  <div class="register-container" style="">
+    <div class="error-message">
+      <h4 class="" id="error-message-container">{{errorMessage}}</h4>
+    </div>
+
+    <!--  <h2>INSCRIPTION</h2>
+      <hr />
+
+      <table>
+        <tbody>
+          <tr>
+            <label class="status-register">
+                  <input type="checkbox" name="" value="">
+                  <span></span>
+                    Elève
+            </label>
+
+            <label class="status-register">
+                  <input type="checkbox" name="" value="">
+                  <span></span>
+                    Parent
+            </label>
+          </tr>
+        </tbody>
+      </table> -->
+        <!------------- END CHECKBOX -------------->
+      <form [formGroup]="registerForm" id="form-signup" (validSubmit)="onSubmit()">
+      <ul style="margin-top:5%;">
+        <li class="form-group-container">
+            <div >
+              <h2>Inscription</h2>
+
+                      <div class="">
+                      <!-- PREVENT RESUBMISSION --->
+                      <input type="hidden" formControlName="$key">
+                      </div>
+
+                    <!--  <div class="form-group">
+                          <label for="pseudo"><span class="glyphicon glyphicon-user"></span></label>
+                          <input type="text" class="form-control" id="pseudo" (click)="cleanErrorMessage()" aria-describedby="emailHelp" placeholder="Pseudo" formControlName="pseudo">
+                      </div> -->
+
+                      <div class="form-group">
+                          <label for="email"><span class="glyphicon glyphicon-envelope"></span></label>
+                          <input type="email" class="form-control" id="email" (click)="cleanErrorMessage()" aria-describedby="emailHelp" placeholder="Email" formControlName="email">
+                      </div>
+
+                      <div class="form-group">
+                        <label for="password"><span class="glyphicon glyphicon-lock"></span></label>
+                        <input type="password" class="form-control"  id="password" (click)="cleanErrorMessage()" placeholder="Mot de passe" formControlName="password">
+                      </div>
+                      <!--- eye ----->
+                      <span class="eye" id="password-eye" ><i class="fa fa-eye-slash" aria-hidden="true"></i></span>
+
+                      <div class="form-group">
+                        <label for="confirmation"><span class="glyphicon glyphicon-lock"></span></label>
+                        <input type="password" class="form-control" id="confirmation" (keyup.enter)="onSubmit('Inscription')"  (click)="cleanErrorMessage()" placeholder="Confirmation" formControlName="confirmation">
+                      </div>
+                      <!--- eye ----->
+                      <span class="eye" id="confirmation-eye" href=""><i class="fa fa-eye-slash" aria-hidden="true"></i></span>
+
+                  <div class="form-group" >
+                    En clicquant sur S'inscrire, vous accpetez nos <a [routerLink]="['/terms-condition']">&nbsp;&nbsp;termes et conditions d'utilisation.</a>
+                  </div>
+
+                  <div class="form-group" >
+                    <div class="buttons">
+
+                      <button type="button"  id="var_btn_inscription" class="btn btn-primary"  (click)="onSubmit('Inscription')">S'inscrire</button>
+
+                    </div>
+                    <!-- <input type="submit" name="" value="S'inscrire" (click)="onSubmit('Inscription')"> -->
+                  </div>
+
+                <div class="form-group" >
+                  J'ai déjà un compte:&nbsp;&nbsp;&nbsp;<a [routerLink]="['/login']">Se connecter</a>
+                </div>
+              </div>
+              <!------------ END TERMS and CONDITION and Submit --------------->
+        </li>
+        <!---------------- END LEFT ---------------->
+        <li class="register-right-side">
+
+                <table>
+                  <tbody>
+                    <tr>
+                      <td class=""><div><a (click)="onSubmit('google')"><img src="http://pluspng.com/img-png/google-logo-png-open-2000.png" alt=""><span>&nbsp;&nbsp;&nbsp;S'inscrire avec GOOGLE</span></a></div></td>
+                    </tr>
+                    <tr>
+                      <td class=""><div><a (click)="onSubmit('facebook')"><img src="https://banner2.cleanpng.com/20180920/uck/kisspng-logo-facebook-aylmer-computer-icons-brand-facebook-icon-social-media-icon-png-and-vector-5ba33cfca09f68.0357049415374246366579.jpg" alt=""><span>&nbsp;&nbsp;&nbsp;S'inscrire avec FACEBOOK</span></a></div></td>
+                    </tr>
+                  </tbody>
+                </table>
+        </li>
+
+        <!--------------- END RIGHT ----------------->
+      </ul>
+      </form>
+  </div>
+
+<!---------------------------------------------------------- END REGISTER------------------------------------------------->
+<div class="content-container" style="background:#000; color:white; margin-top:7px;">
+  <div class="content">
+    <div class="footer">
+
+      <div class="footer-sitemap">
+        <div class="footer-section">
+          <b>Nos compétences</b><br /><br />
+          <a href="#">Maths séconde - terminale</a><br />
+          <a href="#">Physique séconde - terminale</a><br />
+          <a href="#">Chimie séconde - terminale</a><br />
+          <a href="#">Initiation à la programmation C/python</a><br />
+        </div>
+
+        <div class="footer-section">
+          <b></b><br /><br />
+          <a href="#"></a><br />
+          <a href="#"></a><br />
+          <a href="#"></a>
+          <a href="#"></a><br />
+        </div>
+
+        <div class="footer-section">
+          <b></b><br /><br />
+          <a href="mailto:tresonance@hotmail.fr">Nous contacter</a><br />
+          <a href="#">Terms &amp; privacy</a><br />
+        </div>
+
+        <div class="footer-section">
+          <div class="social-media-links">
+            <b>Nous suivre:</b><br/><br />
+            <a href="http://www.facebook.com/SchoolYourself"><img src="//schoolyourself.org/images/facebook_icon.png" width="30"/></a>
+            <a href="https://plus.google.com/111095141647823369081/posts"><img src="//schoolyourself.org/images/gplus_icon.png" width="30"/></a>
+            <a href="http://twitter.com/SchoolYourself"><img src="//schoolyourself.org/images/twitter_icon.png" width="30"/></a>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="copyright">&copy; 2012-2015 School Yourself, Inc.<br/>
+        Icons from <a href="http://glyphicons.com">glyphicons.com</a> <a href="http://creativecommons.org/licenses/by/3.0/deed.en">(license)</a></div>
+    </div>
+  </div>
+</div>
+
+</body>

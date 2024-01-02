@@ -1,0 +1,39 @@
+<!-- <div  style="width:200px; height: auto; position:absolute; left:90%; text-align:center">
+	 <div  style="width:100%; position:absolute;">
+        <div (click)="stopCamera($event);" style="z-index:3; cursor:pointer;width:19px; height:19px; font-size:1.9em; position:absolute;"><span style="border:1px solid black; margin:0;">X</span></div>
+		    <webcam
+            [height]="250"
+            [width]="250"
+            [trigger]="triggerObservable"
+            (imageCapture)="handleImage($event)"
+		        [allowCameraSwitch]="allowCameraSwitch"
+            [switchCamera]="nextWebcamObservable"
+            [videoOptions]="videoOptions"
+            (cameraSwitched)="cameraWasSwitched($event)"
+		        (initError)="handleInitError($event)"
+            >
+        </webcam>
+		    <br/> -->
+		    <!--<div class="actionBtn" (click)="triggerSnapshot();" title="Take Picture">📸</div>
+		    <div class="actionBtn" (click)="showNextWebcam(true);" title="Switch Camera">🔁</div>-->
+	<!-- </div>
+</div>
+
+<h4 *ngIf="errors.length > 0">Messages:</h4>
+<ul *ngFor="let error of errors">
+	<li>{{error | json}}</li>
+</ul> -->
+
+<!------------------------------ WEB RTC -------------------------------------------------------->
+<!------------------------------------------------------------------------------------------------>
+<div class="camera-container" [ngStyle]="{'z-index': '3', 'width': '240px' , 'height':'auto'}">
+    <div *ngIf="start_local_video" [ngStyle]="{'z-index': '2', 'width': '240px' , 'height':'160px', 'margin':'5px', 'padding':'0'}">
+        <video id="localeVideo" [ngStyle]="{'width':'100%', 'margin':'2px','height':'140px'}"  autoplay></video>
+    </div>
+    <div>
+        <div *ngFor="let user of cam_selected_users; let i = index"  [ngStyle]="{'z-index': '2', 'width': '240px' , 'height':'160px', 'margin':'5px', 'padding':'0'}">
+              <video id="{{ 'remoteVideo' + i }}" [ngStyle]="{'width':'100%', 'margin':'2px','height':'140px'}"  autoplay></video>
+              <p>{{user.pseudo}}</p>
+        </div>
+    </div>
+</div>

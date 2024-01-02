@@ -1,0 +1,575 @@
+<body >
+  <header class="header-container">
+        <ul class="logo-bars">
+            <li class="logo">
+              <!-- logo -->
+                <div class=""><a [routerLink]="['/profile']" ><img src="../../../assets/img/accueil2/logo.png" alt="loni" style="" /><span style="font-size:1.6em;">L O N I</span></a></div>
+            </li>
+            <li>
+              <!-- bar agrandissement -->
+                <div  class="vd_panel-menu  hidden-sm hidden-xs" data-intro="<strong>Minimize Left Navigation</strong> <br/> Toggle navigation size to medium or small size. You can set both button or one button only. See full option at documentation." data-step=1>
+                  		 <a href="javascript:void(0);" >
+                         <span class="nav-medium-button menu" data-toggle="tooltip "  data-placement="bottom" data-original-title="Medium Nav Toggle" data-action="nav-left-medium ">
+      	                     <i class="fa fa-bars"></i>
+                        </span></a>
+                  </div>
+            </li>
+            <li>
+              <!-- bar reduction -->
+              <div  class="vd_panel-menu  hidden-sm hidden-xs" data-intro="<strong>Minimize Left Navigation</strong> <br/> Toggle navigation size to medium or small size. You can set both button or one button only. See full option at documentation." data-step=1>
+                     <a href="javascript:void(0);" >
+                       <span class="nav-small-button menu" data-toggle="tooltip "  data-placement="bottom" data-original-title="Small Nav Toggle" data-action="nav-left-small">
+                          <i class="fa fa-ellipsis-v"></i>
+                       </span></a>
+                </div>
+            </li>
+            <li>
+              <!--- ne s'affiche pas ----->
+              <div  class="vd_panel-menu left-pos visible-sm visible-xs">
+                    <span class="menu" data-action="toggle-navbar-left">
+                        <i class="fa fa-ellipsis-v"></i>
+                    </span>
+              </div>
+            </li>
+            <li>
+                <!--- ne s'affiche pas ----->
+              <div class="vd_panel-menu visible-sm visible-xs">
+                   <span class="menu visible-xs" data-action="submenu">
+                      <i class="fa fa-bars"></i>
+                   </span>
+                   <span class="menu visible-sm visible-xs" data-action="toggle-navbar-right">
+                        <i class="fa fa-comments"></i>
+                   </span>
+              </div>
+            </li>
+        </ul>
+          <!-- DEBUT SEARCH BARRE ------------>
+        <div class="search-container" style="">
+          <form id="search-box" method="post" action="#">
+              <!-- header: Search box -->
+              <input type="text" name="search" class="vd_menu-search-text width-60" placeholder="Search">
+              <a href="#"><span class="vd_menu-search-submit"><i class="fa fa-search"></i> </span></a>
+          </form>
+        </div>
+          <!-- END BARRE DE RECHERCHE ------------>
+        <ul class="nav-bar">
+              <li><!--- Enveloppe  et sa notification  --->
+                <a href="#" class="nav-icon-container" id="nav-icon-container-popup" data-action="">
+                  <!-- icone d'enveloppe -->
+      	             <span class="mega-icon"><i class="fa fa-envelope"></i></span>
+                    <!-- le nombre de notification qui s'affiche juste en haut -->
+                    <span class="badge vd_bg-red">10</span>
+                </a>
+                  <!------------  POPUP  ENVELOPPE ------------------------------------------------------------------------------>
+                  <div id="triangle-up2"></div>
+                  <div class="message-pop-up-container">
+                    <div class="message-notification-popup">
+                    <div class="message-pupup-title">
+                        Messages
+                        <!-- header: bouton setting de popup de icone enveloppe -->
+                        <div class="vd_panel-menu-message">
+                          <span data-original-title="Message Setting" data-toggle="tooltip "  data-placement="bottom" class="menu">
+                              <i class="fa fa-cog"></i>
+                          </span>
+                        </div>
+                    </div>
+                    <div class="message-pop-up-content">
+                          <ul>
+                            <li>
+                              <!-- photo1 -->
+                              <a href="#"><img alt="example image" src="https://codeboxr.net/themedemo/unialumni/html/assets/img/blog/author.jpg">
+                              <!-- recent receive message -->
+                              <div class="menu-text"> Do you play or follow any sports?
+                                   <div class="menu-info">
+                                     <!-- message time -->
+                                      <span class="menu-date">12 Minutes Ago </span>
+                                      <!-- mark as read -->
+                                      <span class="menu-action">
+                                          <span class="menu-action-icon" data-original-title="Mark as Unread" data-toggle="tooltip "  data-placement="bottom">
+                                              <i class="fa fa-eye"></i>
+                                          </span>
+                                      </span>
+                                   </div>
+                              </div></a>
+                            </li>
+
+                            <li>
+                              <!-- photo2 -->
+                              <a href="#"><img alt="example image" src="https://codeboxr.net/themedemo/unialumni/html/assets/img/blog/author.jpg">
+                              <!-- recent receive message -->
+                              <div class="menu-text">  Good job mate !
+                                   <div class="menu-info">
+                                     <!-- message time -->
+                                      <span class="menu-date">1 Hour 20 Minutes Ago</span>
+                                      <!-- mark as read -->
+                                      <span class="menu-action">
+                                          <span class="menu-action-icon" data-original-title="Mark as Unread" data-toggle="tooltip "  data-placement="bottom">
+                                              <i class="fa fa-eye"></i>
+                                          </span>
+                                      </span>
+                                   </div>
+                              </div></a>
+                            </li>
+
+                            <li>
+                              <!-- photo3 -->
+                              <a href="#"><img alt="example image" src="https://codeboxr.net/themedemo/unialumni/html/assets/img/blog/author.jpg">
+                              <!-- recent receive message -->
+                              <div class="menu-text"> Just calm down babe, everything will work out.
+                                   <div class="menu-info">
+                                     <!-- message time -->
+                                      <span class="menu-date">12 Days Ago</span>
+                                      <!-- mark as read -->
+                                      <span class="menu-action">
+                                          <span class="menu-action-icon" data-original-title="Mark as Unread" data-toggle="tooltip "  data-placement="bottom">
+                                              <i class="fa fa-eye"></i>
+                                          </span>
+                                      </span>
+                                   </div>
+                              </div></a>
+                            </li>
+
+                            <li >
+                                <!-- photo4 -->
+                                <a href="#"><img alt="example image" src="https://codeboxr.net/themedemo/unialumni/html/assets/img/blog/author.jpg">
+                                <!-- recent receive message -->
+                                <div class="menu-text">  Euuh so gross....
+                                   <div class="menu-info">
+                                     <!-- message time -->
+                                     <span class="menu-date">19 Days Ago </span>
+                                     <!-- mark as read -->
+                                     <span class="menu-action">
+                                        <span class="menu-action-icon" data-original-title="Mark as Read" data-toggle="tooltip "  data-placement="bottom">
+                                            <i class="fa fa-eye-slash"></i>
+                                        </span>
+                                    </span>
+                                  </div>
+                              </div></a>
+                          </li>
+
+
+                          <li >
+                              <!-- photo5 -->
+                              <a href="#"><img alt="example image" src="https://codeboxr.net/themedemo/unialumni/html/assets/img/blog/author.jpg">
+                              <!-- recent receive message -->
+                              <div class="menu-text">  That's the way.. I like it :D
+                                 <div class="menu-info">
+                                   <!-- message time -->
+                                   <span class="menu-date">20 Days Ago </span>
+                                   <!-- mark as read -->
+                                   <span class="menu-action">
+                                      <span class="menu-action-icon" data-original-title="Mark as Read" data-toggle="tooltip "  data-placement="bottom">
+                                          <i class="fa fa-eye-slash"></i>
+                                      </span>
+                                  </span>
+                                </div>
+                            </div></a>
+                        </li>
+
+
+                        <li >
+                            <!-- photo6 -->
+                            <a href="#"><img alt="example image" src="https://codeboxr.net/themedemo/unialumni/html/assets/img/blog/author.jpg">
+                            <!-- recent receive message -->
+                            <div class="menu-text">  Oooh don't be shy ;P
+                               <div class="menu-info">
+                                 <!-- message time -->
+                                 <span class="menu-date">21 Days Ago </span>
+                                 <!-- mark as read -->
+                                 <span class="menu-action">
+                                    <span class="menu-action-icon" data-original-title="Mark as Read" data-toggle="tooltip "  data-placement="bottom">
+                                        <i class="fa fa-eye-slash"></i>
+                                    </span>
+                                </span>
+                              </div>
+                          </div></a>
+                      </li>
+
+
+                      <li >
+                          <!-- photo7 -->
+                          <a href="#"><img alt="example image" src="https://codeboxr.net/themedemo/unialumni/html/assets/img/blog/author.jpg">
+                          <!-- recent receive message -->
+                          <div class="menu-text">  Hello, please call my number..
+                             <div class="menu-info">
+                               <!-- message time -->
+                               <span class="menu-date">24 Days Ago </span>
+                               <!-- mark as read -->
+                               <span class="menu-action">
+                                  <span class="menu-action-icon" data-original-title="Mark as Read" data-toggle="tooltip "  data-placement="bottom">
+                                      <i class="fa fa-eye-slash"></i>
+                                  </span>
+                              </span>
+                            </div>
+                        </div></a>
+                    </li>
+
+
+                    <li >
+                        <!-- photo8 -->
+                        <a href="#"><img alt="example image" src="https://codeboxr.net/themedemo/unialumni/html/assets/img/blog/author.jpg">
+                        <!-- recent receive message -->
+                        <div class="menu-text">  Don't go anywhere, i will be coming soon
+                           <div class="menu-info">
+                             <!-- message time -->
+                             <span class="menu-date">1 Month 2 days Ago </span>
+                             <!-- mark as read -->
+                             <span class="menu-action">
+                                <span class="menu-action-icon" data-original-title="Mark as Read" data-toggle="tooltip "  data-placement="bottom">
+                                    <i class="fa fa-eye-slash"></i>
+                                </span>
+                            </span>
+                          </div>
+                      </div></a>
+                  </li>
+
+                          </ul>
+                    </div>
+                    </div>
+                  </div>
+              </li>
+
+
+              <li><!-- globe et sa notification ----->
+                <a class="nav-icon-container" id="nav-icon-notification-container-popup" href="#" class="mega-link" data-action="click-trigger ">
+                  <!-- icone de globe -->
+                  <span class="mega-icon"><i class="fa fa-globe"></i></span>
+                    <!-- le nombre de notification qui s'affiche juste en haut -->
+                    	<span class="badge vd_bg-red">51</span>
+                </a>
+                <!------------- popup de notification ----------------------->
+                <div id="triangle-up3"></div>
+                <div class="notification-pop-up-container">
+                  <div class="notification-notification-popup">
+                  <div class="notification-pupup-title">
+                      Notifications
+                      <!-- header: bouton setting de popup de icone enveloppe -->
+                      <div class="vd_panel-menu-notification">
+                        <span data-original-title="Notification Setting" data-toggle="tooltip "  data-placement="bottom" class="menu">
+                            <i class="fa fa-cog"></i>
+                        </span>
+                      </div>
+                  </div>
+                  <div class="notification-pop-up-content">
+                        <ul>
+                          <li>
+                            <!-- photo1 -->
+                            <a href="#">
+                              <div class="menu-icon vd_yellow"><i class="fa fa-suitcase"></i></div>
+                                  <div class="menu-text"> Someone has give you a surprise
+                                  	<div class="menu-info"><span class="menu-date">12 Minutes Ago</span></div>
+                                  </div>
+                            </a>
+                          </li>
+
+                          <li>
+                            <!-- photo2 -->
+                            <a href="#">
+                            		<div class="menu-icon vd_blue"><i class=" fa fa-user"></i></div>
+                                    <div class="menu-text">  Change your user profile details
+                                    	<div class="menu-info"><span class="menu-date">1 Hour 20 Minutes Ago</span></div>
+                                    </div>
+                            </a>
+                          </li>
+
+                          <li>
+                            <!-- photo3 -->
+                            <a href="#">
+                            		<div class="menu-icon vd_red"><i class=" fa fa-cogs"></i></div>
+                                    <div class="menu-text">  Your setting is updated
+                                    	<div class="menu-info"><span class="menu-date">12 Days Ago</span></div>
+                                    </div>
+                            </a>
+                          </li>
+
+                          <li >
+                              <!-- photo4 -->
+                              <a href="#">
+                              		<div class="menu-icon vd_green"><i class=" fa fa-book"></i></div>
+                                      <div class="menu-text">  Added new article
+                                      	<div class="menu-info"><span class="menu-date">19 Days Ago</span></div>
+                                      </div>
+                              </a>
+                        </li>
+
+
+                        <li >
+                            <!-- photo5 -->
+                            <a href="#">
+                            		<div class="menu-icon vd_green"><img alt="example image" src="https://codeboxr.net/themedemo/unialumni/html/assets/img/blog/author.jpg"></div>
+                                    <div class="menu-text">  Change Profile Pic
+                                    	<div class="menu-info"><span class="menu-date">20 Days Ago</span></div>
+                                    </div>
+                            </a>
+                      </li>
+
+
+                      <li >
+                          <!-- photo6 -->
+                          <a href="#">
+                          		<div class="menu-icon vd_red"><i class=" fa fa-cogs"></i></div>
+                                  <div class="menu-text">  Your setting is updated
+                                  	<div class="menu-info"><span class="menu-date">12 Days Ago</span></div>
+                                  </div>
+                          </a>
+                    </li>
+
+
+                    <li >
+                        <!-- photo7 -->
+                        <a href="#">
+                        		<div class="menu-icon vd_green"><i class=" fa fa-book"></i></div>
+                                <div class="menu-text">  Added new article
+                                	<div class="menu-info"><span class="menu-date">19 Days Ago</span></div>
+                            </div>
+                            </a>
+                  </li>
+
+
+                  <li >
+                      <!-- photo8 -->
+                      <a href="#">
+                      		<div class="menu-icon vd_green"><img alt="example image" src="https://codeboxr.net/themedemo/unialumni/html/assets/img/blog/author.jpg"></div>
+                              <div class="menu-text">  Change Profile Pic
+                              	<div class="menu-info"><span class="menu-date">20 Days Ago</span></div>
+                              </div>
+                      </a>
+                </li>
+
+                        </ul>
+                  </div>
+                  </div>
+                </div>
+
+                <!--------------- end popu up de notification ---------------------->
+              </li>
+              <li class=""><!--- icone profile et sous menu ----->
+                <!-- icone de profile -->
+                <a class="nav-icon-container" href="#" id="link-profil-popup1" >
+                    <span  class="mega-image">
+                        <img style="" src="https://codeboxr.net/themedemo/unialumni/html/assets/img/blog/author.jpg" alt="example image" />
+                    </span>
+                </a>
+              </li>
+              <li class="nav-profile-container"><!--- icone profile et sous menu ----->
+                <!-- icone de profile -->
+                <a href="#" class="nav-profile-container-link" id="link-profil-popup2" href="#" >
+                    <span class="mega-name">
+                        {{pseudo}} <i style="margin-left:4px;" class="fa fa-caret-down fa-fw"></i>
+                    </span></a>
+
+                    <!-- header: popup de icone de profil: le petit triangle --------------------------------------------------------------------    ----->
+                  <div id="triangle-up"></div>
+                  <div class="profile-pop-up-container" >
+                        <ul class="profile-popup">
+                          <li> <a href="#"> <span class="menu-icon"><i class=" fa fa-user"></i></span> <span class="menu-text">Modifier Profile</span> </a> </li>
+                          <li> <a href="#"> <span class="menu-icon"><i class=" fa fa-trophy"></i></span> <span class="menu-text">Mes trophées</span> </a> </li>
+                          <li> <a href="#"> <span class="menu-icon"><i class=" fa fa-envelope"></i></span> <span class="menu-text">Messages</span><span   class="badge vd_bg-red">10</span> </a>  </li>
+                          <li> <a href="#"> <span class="menu-icon"><i class=" fa fa-tasks"></i></span> <span class="menu-text"> Tâches</span><span class="badge vd_bg-red">5</span> </a> </li>
+
+                          <!-- <li> <a href="#"> <div class="menu-icon"><i class=" fa fa-lock"></i></div> <div class="menu-text">Privacy</div> </a> </li> -->
+                          <li> <a href="#"> <span class="menu-icon"><i class=" fa fa-cogs"></i></span> <span class="menu-text">Réglages</span> </a> </li>
+                        <!--  <li> <a href="#"> <div class="menu-icon"><i class="  fa fa-key"></i></div> <div class="menu-text">Lock</div> </a> </li> -->
+                          <li> <a (click)="logOut($event)" style="cursor:pointer;" > <span class="menu-icon"><i class=" fa fa-sign-out"></i></span>  <span class="menu-text">Se deconnecter</span> </a> </li>
+
+                          <li> <a href="#"> <span class="menu-icon"><i class=" fa fa-question-circle"></i></span> <span class="menu-text">Help</span> </a> </li>
+                          <li> <a [routerLink]="['/contact']" > <span class="menu-icon"><i class=" glyphicon glyphicon-bullhorn"></i></span> <span style="" class="menu-text">Signaler un Problème</span> </a> </li>
+                        </ul>
+                  </div>
+              </li>
+        </ul>
+        <!-- END NAV BAR ----------------------------->
+  </header>
+  <!--------------------- END HEADERS ------------------------------->
+  <div class="profile-body-container">
+  <!----------------- ACCORDEON  DROP DOWN IN THE LEFT -------------------------------------------------------------------------------->
+  <div class="left-nav-container">
+            <!----- PENDING TASK ------------------------------------->
+            <div class="pending-task-container">
+                  <ul>
+                    <li>
+                      <a class="mega-link  vd_bg-green" href="javascript:void(0);"   data-action="click-trigger ">
+                          <span class="mega-icon">
+                              <i class="fa fa-tasks"></i>
+                          </span>
+                          <span style="border:1px solid red;background-color:rgba(250,0,0,0.6);" class="badge vd_bg-red">
+                              8
+                          </span>
+                      </a>
+                    </li>
+
+                    <li>
+                        <a class="mega-link vd_bg-yellow " href="javascript:void(0);" data-action="click-trigger ">
+                            <span class="mega-icon">
+                                <i class="fa fa-pencil"></i>
+                            </span>
+                      </a>
+                    </li>
+
+                    <li>
+                      <a class="mega-link vd_bg-red" href="javascript:void(0);" data-action="click-trigger ">
+                          <span class="mega-icon">
+                              <i class="fa fa-plus"></i>
+                          </span>
+                        </a>
+                    </li>
+                  </ul>
+            </div>
+            <!--------------- LEFT NAV LINK exemple: Go to class---------------------------->
+            <div class="left-nav-link-container">
+                <div class="left-nav-link-rotation-container">
+                    <div class="vd_panel-menu hidden-xs">
+                        <a href="javascript:void(0);"><span data-original-title="Expand All" data-toggle="tooltip "  data-placement="bottom" data-action="expand-all " class="menu" data-intro="<strong>Expand Button</strong><br/>To expand all menu on left navigation menu." data-step=4 >
+                          <i class="fa fa-sort-amount-asc"></i>
+                        </span></a>
+                    </div>
+                </div>
+                <div class="left-nav-link-sub-menu-container">
+                      <ul>
+                        <li>
+                          <a  href="javascript:void(0);" data-action="click-trigger ">
+                          	<span class="menu-icon"><i class="fa fa-dashboard"></i></span>
+                              <span class="menu-text">TODO</span>
+                              <span class="menu-badge"><span class="badge vd_bg-black-30"><i class="fa fa-angle-down"></i></span></span>
+                         	</a>
+                        </li>
+
+                        <li>
+
+                          <a [routerLink]="['/whiteboard']" data-action="click-trigger ">
+                          	<span class="menu-icon"><i class="fa fa-dashboard"></i></span>
+                              <span class="menu-text">whiteboard</span>
+                              <span class="menu-badge"><span class="badge vd_bg-black-30"><i class="fa fa-angle-down"></i></span></span>
+                         	</a>
+                        </li>
+
+                        <li>
+                        <a href="javascript:void(0);"   data-action="click-trigger ">
+                          <span class="menu-icon"><i class="fa fa-dashboard"></i></span>
+                            <span class="menu-text">Faire mes exercices</span>
+                            <span class="menu-badge"><span class="badge vd_bg-black-30"><i class="fa fa-angle-down"></i></span></span>
+                        </a>
+                      </li>
+
+                        <li>
+                          <a [routerLink]="['/whiteboard']" data-action="click-trigger ">
+                          	<span class="menu-icon"><i class="fa fa-dashboard"></i></span>
+                              <span class="menu-text">Cours vidéo</span>
+                              <span class="menu-badge"><span class="badge vd_bg-black-30"><i class="fa fa-angle-down"></i></span></span>
+                         	</a>
+                        </li>
+
+                        <li>
+                          <a [routerLink]="['/whiteboard']" data-action="click-trigger ">
+                          	<span class="menu-icon"><i class="fa fa-dashboard"></i></span>
+                              <span class="menu-text">S'inscrire au Challenge</span>
+                              <span class="menu-badge"><span class="badge vd_bg-black-30"><i class="fa fa-angle-down"></i></span></span>
+                         	</a>
+                        </li>
+
+                        <li>
+                          <a [routerLink]="['/chatrooms/chat-page']" data-action="click-trigger ">
+                          	<span class="menu-icon"><i class="fa fa-dashboard"></i></span>
+                              <span class="menu-text">Battles</span>
+                              <span class="menu-badge"><span class="badge vd_bg-black-30"><i class="fa fa-angle-down"></i></span></span>
+                         	</a>
+                        </li>
+
+                        <li>
+                          <a [routerLink]="['/chatrooms/chat-page']" data-action="click-trigger ">
+                          	<span class="menu-icon"><i class="fa fa-dashboard"></i></span>
+                              <span class="menu-text">Forums</span>
+                              <span class="menu-badge"><span class="badge vd_bg-black-30"><i class="fa fa-angle-down"></i></span></span>
+                         	</a>
+                        </li>
+
+                        <li>
+                          <a [routerLink]="['/whiteboard']" data-action="click-trigger ">
+                          	<span class="menu-icon"><i class="fa fa-dashboard"></i></span>
+                              <span class="menu-text">Essai de correction</span>
+                              <span class="menu-badge"><span class="badge vd_bg-black-30"><i class="fa fa-angle-down"></i></span></span>
+                         	</a>
+                        </li>
+
+                        <li>
+                          <a [routerLink]="['/whiteboard']" data-action="click-trigger ">
+                          	<span class="menu-icon"><i class="fa fa-dashboard"></i></span>
+                              <span class="menu-text">Mes colles</span>
+                              <span class="menu-badge"><span class="badge vd_bg-black-30"><i class="fa fa-angle-down"></i></span></span>
+                         	</a>
+                        </li>
+
+                        <li>
+                          <a [routerLink]="['/whiteboard']" data-action="click-trigger ">
+                          	<span class="menu-icon"><i class="fa fa-dashboard"></i></span>
+                              <span class="menu-text">Contacter Loni</span>
+                              <span class="menu-badge"><span class="badge vd_bg-black-30"><i class="fa fa-angle-down"></i></span></span>
+                         	</a>
+                        </li>
+
+                        <li>
+                          <a [routerLink]="['/whiteboard']" data-action="click-trigger ">
+                            <span class="menu-icon"><i class="fa fa-dashboard"></i></span>
+                              <span class="menu-text">Challenge winner</span>
+                              <span class="menu-badge"><span class="badge vd_bg-black-30"><i class="fa fa-angle-down"></i></span></span>
+                          </a>
+                        </li>
+
+
+
+                        <!-- <li><a [routerLink]="['/chatrooms/chat-page']" ><img src="" alt=""><span>Forums</span></a></li> -->
+                      </ul>
+                </div>
+            </div>
+  </div>
+  <!-------------------- END profil-body-container---------------------------------------------------->
+  <div class="profile-center-content-container" style="">
+        <ul>
+        <!-------------------------------------- Agrandir - reduire ---------------------------------------------------------->
+        <li  style=""><!-- first child -->
+            <div>
+            <a href="javascript:void(0);"><span data-action="remove-navbar" data-original-title="Remove Navigation Bar Toggle" data-toggle="tooltip "  data-placement="bottom" class="remove-navbar-button menu"> <i class="fa fa-arrows-h"></i> </span></a>
+            <a href="javascript:void(0);"><span data-action="remove-header" data-original-title="Remove Top Menu Toggle" data-toggle="tooltip "  data-placement="bottom" class="remove-header-button menu"> <i class="fa fa-arrows-v"></i> </span></a>
+            <a href="javascript:void(0);"><span data-action="fullscreen" data-original-title="Remove Navigation Bar and Top Menu Toggle" data-toggle="tooltip "  data-placement="bottom" class="fullscreen-button menu"> <i class="glyphicon glyphicon-fullscreen"></i> </span></a>
+            </div>
+        </li>
+        <!-------------------------------- LEVEL ---------------------------------------------------->
+        <li class="" style=""> <!-- second child -->
+                <h2 style="margin:0; padding:0;"><span style="">Points Gagnés: </span><span>16</span></h2>
+        </li>
+        <!---------------------- centre de page profil -------------------------->
+        <li class="profil-winner-me" style=""> <!-- third child : reservé au gagnant du challenge -->
+              <ul>
+                <!------------------- profil winner ---------------->
+                <li class="profil-winner">
+                         <img style="" alt="example image" src='http://www.venmond.com/demo/vendroid/img/avatar/big.jpg'>
+                         <p><a href="#">Make clap for<span></span><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTxqsWt2wrismPtZXevqQa7PQdk_Y7timCpGC4LPe7wpZRXkFKe&s" alt=""></a></p>
+                </li>
+                <!------------ profil me --------------->
+                <li class="profil-me">
+                          <table style=""><tr><td><h3><a href="javascript:void(0);"><i class="fa fa-pencil append-icon"></i>&nbsp;&nbsp;Edit</a></h3></td></tr></table>
+                          <table><tr><td><hr /></td></tr></table>
+
+                          <table style="clear:right;"><tr><td><h1><span class="glyphicon glyphicon-user"></span> &nbsp;&nbsp;A PROPOS DE MOI</h1></td></tr></table>
+
+                          <table class="identity" width="800">
+                            <tr>
+                                  <td><b>Nom:&nbsp;</b></td><td>Traore</td><td><b>Prenom:</b></td><td>ibrahima</td>
+                            </tr>
+                            <tr>
+                                  <td><b>Pseudo:&nbsp;</b></td><td>ibtraore</td><td><b>classe:</b></td><td>Terminale</td>
+                            </tr>
+                            <tr>
+                                  <td><b>Ville:&nbsp;</b></td><td>Paris</td><td><b>Pays:</b></td><td>France</td>
+                            </tr>
+                          </table>
+                </li>
+              </ul>
+
+        </li>
+        </ul>
+  </div>
+  </div>
+
+  <!------------------------------ END ACCORDEON DROP DOWN -------------------------------------------------------------------->
+</body>

@@ -1,0 +1,13 @@
+
+ <div class="canvas_wrapper_div">
+      <canvas  #canvas class="canvas_whiteboard">Your browser does not support canvas. Please upgrade it</canvas>
+      <canvas #incompleteShapesCanvas class="incomplete_shapes_canvas_whiteboard"
+                    (mousedown)="canvasUserEvents($event)" (mouseup)="canvasUserEvents($event)"
+                    (mousemove)="canvasUserEvents($event)" (mouseout)="canvasUserEvents($event)"
+                    (touchstart)="canvasUserEvents($event)" (touchmove)="canvasUserEvents($event)"
+                    (touchend)="canvasUserEvents($event)" (touchcancel)="canvasUserEvents($event)"
+
+      >
+          Your browser does not support canvas. Please upgrade it
+      </canvas>
+</div>

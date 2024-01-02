@@ -1,0 +1,352 @@
+<body>
+  <div class="header-container">
+      <div class="header">
+          <div class="logo"  >
+              <div style="width:25%; height:25%; margin-left:-3%; margin-top:-1%; ">
+                  <a [routerLink]="['/loni']" >
+                      <img src="../../../assets/img/accueil2/logo.png" alt="loni" style="width:40%; height:480%; " />
+                      <span style="font-weight:bold; margin-left:-19px; font-family:cursive, sans-serif">Loni</span>
+                      <div style="font-size:0.5em;  position:absolute;  width: 140px; display:block; top:29px; left:80px;">Les cours et suivi particuliers</div>
+                  </a>
+              </div>
+          </div> <!-- LOGO end here -->
+
+          <div id="menu">
+              <ul id="nav">
+                  <li><a  [routerLink]="['/loni']" >Accueil</a></li>
+                  <li><a  [routerLink]="['/a_propos']" >A propos</a></li>
+                  <!--<li><a href="#" target="_self" >A Propos</a></li> -->
+                  <!--<li><a href="#" target="_self" >Qui suis je?</a></li>-->
+                  <li><a [routerLink]="['/infos-services']"  class="sub_menu_after_flag">Infos & Services</a>
+                      <ul class="sub_menu_before1_flag">
+                          <!-- <li><a href="#" target="_self" >Qui-suis je?</a></li> -->
+                          <li><a [routerLink]="['/infos-services']" >Cours</a>
+                              <ul >
+                                    <li><a [routerLink]="['/infos-services/?cours-domicile']" class="sub_menu_before2_flag">Cours à domicile</a>
+                                    <!--<li><a [routerLink]="['/infos-services/cours/cours-ligne']" >Cours en ligne</a>-->
+                                    <li><a [routerLink]="['/infos-services/?cours-intensifs']" >Cours intensifs</a>
+                                    <li><a [routerLink]="['/infos-services/?cours-live']" >cours en live</a>
+                                    <li><a [routerLink]="['/infos-services/?cours-ligne']" >cours en ligne</a>
+                              </ul>
+                          </li>
+                          <li><a [routerLink]="['/infos-services/?cours-suivi']" >Cours et suivi</a>
+                          <li><a  [routerLink]="['/infos-services/?commentaires']">Les avis</a>
+                      </ul>
+                </li>
+                <li><a [routerLink]="['/contact']" >Contact</a></li>
+                <li><a [routerLink]="['/register']" ><span class="show-reg-form-signup hidden-xs"><i style="margin:5px;" class="fa fa-user-secret"></i>Sign up</span></a></li>
+              <li><a [routerLink]="['/login']"><span class="show-reg-form "><i style="margin:5px;" class="fa fa-sign-in"></i>Sign In</span></a></li>
+            </ul>
+        </div> <!-- MENU end here -->
+    </div><!-- HEADER end here -->
+  </div> <!-- HEADER-CONTAINER end here -->
+<!-------------------------------------------------------------------------------------------------------------------->
+  <div class="section-ruban">
+        Infos et Services
+  </div>
+
+  <!-- INFOS et SERVICES ----------------------->
+    <div class="infos-cours-container" *ngIf="cours_domicile">
+      <p style="" >Loni propose en outre <b>des cours de mathématiques privés</b> à Marbella.Mes étudiants sont souvent inscrits dans des écoles privées
+        internationales ou britanniques sur la Costa del Sol et ont entre 12 et 18 ans. Pendant les cours, nous <b>préparons
+        les examens </b>et je les <b>aide à faire leurs devoirs</b>. Les élèves me posent également des questions sur les leçons qu'ils
+        ont suivies à l'école.Par conséquent, j'explique des sujets qui <b>ne sont pas compris en classe</b>.Pendant les vacances,
+        nous avons une longueur d'avance sur le prochain trimestre. Lorsque nous étudions pour des examens tels que <b>iGCSE,
+        AS, mathématiques A-Level ou IB</b>, nous pratiquons avec des papiers antérieurs. Tout au long du cours, nous examinons
+        la cause des marques perdues. En nous concentrant sur des sujets clés, nous <b>améliorons les notes de l’élève</b>. Les
+        leçons privées <b>renforcent la confiance de l'apprenant</b>.</p>
+
+        <h3>Cours Particuliers F.A.Q</h3>
+      <button class="accordion" ><i class="glyphicon glyphicon-plus-sign"></i>Quels sont les taux horaires ?</button>
+      <div class="panel">
+          <p>Le taux horaire est de <strong>€25 </strong>pour les cours de maths, physique et chimie dans votre domicile.Par
+          ailleurs, il est de <strong>€30 </strong> pour l'initiation à la programmation.</p>
+      </div>
+
+      <button class="accordion"><i class="glyphicon glyphicon-plus-sign"></i>Quel est votre zone de mobilité pour les cours ?</button>
+      <div class="panel">
+        <p>Pour l'instant, Nous nous deplaçons dans <b>paris intra-muros</b> et dans <b>certaines banlieues</b> pour les cours en fonction de la distance. Mais bientôt, l'on pourra couvrir toute lîle de france.Une alternative serait d'opter pour les cours en ligne.</p>
+      </div>
+
+
+      <button class="accordion"><i class="glyphicon glyphicon-plus-sign"></i>Comment payez ?</button>
+      <div class="panel">
+        <p>Vous pouvez optez pour le <b>paiement securisé en ligne</b>, via <b>paypal</b> ou <b>transfert bancaire</b> ou simplement par <b>cash</b></p>
+      </div>
+
+      <button class="accordion"><i class="glyphicon glyphicon-plus-sign"></i>Comment puis-je planifier un cours avec vous ?</button>
+      <div class="panel">
+        <p>Les cours ont lieu le même jour et le même horaire chaque semaine. Les parents consultent l’horaire de leur enfant et me
+          recommandent plusieurs rendez-vous possibles. Par la suite, je saisis leurs détails dans mon agenda Google. Avant le début
+          de la leçon, l'étudiant recevra une notification.
+
+          Si vous souhaitez modifier le rendez-vous, veuillez me contacter à l'avance. Cependant, il se peut que je ne puisse pas
+          toujours changer le calendrier. Plus tôt dans l'année, un élève commence des cours de mathématiques privés, plus il aura
+          le choix de prendre un rendez-vous.</p>
+      </div>
+
+      <button class="accordion"><i class="glyphicon glyphicon-plus-sign"></i>Puis-je beneficier des cours à domicile et des cours en ligne?</button>
+      <div class="panel">
+        <p>Oui, bien-sûr, ces deux options sont cumulables. Cependant pour les cours à domicile, tout dependra de la situation géographique de votre domicile</p>
+      </div>
+
+      <button class="accordion"><i class="glyphicon glyphicon-plus-sign"></i>Comment annuler un cours dejà programmé?</button>
+      <div class="panel">
+        <p>Si vous decidez d'annuler les cours <strong>4 heures à l'avance</strong> de communs accords, on pourra fixer un autre
+        programme, en fonctions de nos emplois du temps respectifs. </p>
+      </div>
+
+      <button class="accordion"><i class="glyphicon glyphicon-plus-sign"></i>En savoir plus sur nos résultats.</button>
+      <div class="panel">
+        <p>Je vous invite à consulter <a [routerLink]="['/commentaires']" >Les commentaires et avis </a>de mes anciens éleves ou de leurs familles. </p>
+      </div>
+
+      <button class="accordion"><i class="glyphicon glyphicon-plus-sign"></i>En savoir plus sur les autres cours ...</button>
+      <div class="panel">
+        <p>Je vous invite à consulter  <a href="#cours-en-ligne"  >Cours en privés en ligne </a>ou <a href="#cours-intensifs">Cours intensifs.</a></p>
+      </div>
+
+  </div>
+
+  <!---------- Cours intensifs ----------------------------->
+  <div class="infos-cours-container" *ngIf="cours_intensifs">
+    <p style="" >Loni propose egalement <b>des cours intensifs</b> à Marbella.Mes étudiants sont souvent inscrits dans des écoles privées
+      internationales ou britanniques sur la Costa del Sol et ont entre 12 et 18 ans. Pendant les cours, nous <b>préparons
+      les examens </b>et je les <b>aide à faire leurs devoirs</b>. Les élèves me posent également des questions sur les leçons qu'ils
+      ont suivies à l'école.Par conséquent, j'explique des sujets qui <b>ne sont pas compris en classe</b>.Pendant les vacances,
+      nous avons une longueur d'avance sur le prochain trimestre. Lorsque nous étudions pour des examens tels que <b>iGCSE,
+      AS, mathématiques A-Level ou IB</b>, nous pratiquons avec des papiers antérieurs. Tout au long du cours, nous examinons
+      la cause des marques perdues. En nous concentrant sur des sujets clés, nous <b>améliorons les notes de l’élève</b>. Les
+      leçons privées <b>renforcent la confiance de l'apprenant</b>.</p>
+
+      <h3>Cours Intensifs F.A.Q</h3>
+    <button class="accordion" ><i class="glyphicon glyphicon-plus-sign"></i>Quels sont les taux horaires ?</button>
+    <div class="panel">
+        <p>Le taux horaire est de <strong>€25 </strong>pour les cours de maths, physique et chimie dans votre domicile.Par
+        ailleurs, il est de <strong>€30 </strong> pour l'initiation à la programmation.</p>
+    </div>
+
+    <button class="accordion"><i class="glyphicon glyphicon-plus-sign"></i>Quel est votre zone de mobilité pour les cours ?</button>
+    <div class="panel">
+      <p>Pour l'instant, Nous nous deplaçons dans <b>paris intra-muros</b> et dans <b>certaines banlieues</b> pour les cours en fonction de la distance. Mais bientôt, l'on pourra couvrir toute lîle de france.Une alternative serait d'opter pour les cours en ligne.</p>
+    </div>
+
+
+    <button class="accordion"><i class="glyphicon glyphicon-plus-sign"></i>Comment payez ?</button>
+    <div class="panel">
+      <p>Vous pouvez optez pour le <b>paiement securisé en ligne</b>, via <b>paypal</b> ou <b>transfert bancaire</b> ou simplement par <b>cash</b></p>
+    </div>
+
+    <button class="accordion"><i class="glyphicon glyphicon-plus-sign"></i>Comment puis-je planifier un cours avec vous ?</button>
+    <div class="panel">
+      <p>Les cours intensifs se concentrent sur une période donnée. Ils aident très souvent à preparer une évaluation ou à rapidement rehausser le niveau
+        de l'éleve sur une lèçon ou un chapitre important.
+        Les cours ont lieu le même jour et le même horaire chaque semaine au domicile des parents. Ces derniers consultent l’horaire de leur enfant et me
+        recommandent plusieurs rendez-vous possibles. Par la suite, je saisis leurs détails dans mon agenda Google. Avant le début
+        de la leçon, l'étudiant recevra une notification.
+
+        Si vous souhaitez modifier le rendez-vous, veuillez me contacter à l'avance. Cependant, il se peut que je ne puisse pas
+        toujours changer le calendrier. Plus tôt dans l'année, un élève commence des cours de mathématiques privés, plus il aura
+        le choix de prendre un rendez-vous.</p>
+    </div>
+
+    <button class="accordion"><i class="glyphicon glyphicon-plus-sign"></i>Puis-je beneficier des cours en ligne et des cours à domicile?</button>
+    <div class="panel">
+      <p>Oui, bien-sûr, ces deux options sont cumulables.Cependant pour les cours à domicile, tout dependra de la situation géographique de votre domicile</p>
+    </div>
+
+    <button class="accordion"><i class="glyphicon glyphicon-plus-sign"></i>Comment annuler un cours dejà programmé?</button>
+    <div class="panel">
+      <p>Si vous decidez d'annuler les cours <strong>4 heures à l'avance</strong> de communs accords, on pourra fixer un autre
+      programme, en fonctions de nos emplois du temps respectifs. </p>
+    </div>
+
+    <button class="accordion"><i class="glyphicon glyphicon-plus-sign"></i>En savoir plus sur nos résultats.</button>
+    <div class="panel">
+      <p>Je vous invite à consulter <a [routerLink]="['/commentaires']" >Les commentaires et avis </a>de mes anciens éleves ou de leurs familles. </p>
+    </div>
+
+    <button class="accordion"><i class="glyphicon glyphicon-plus-sign"></i>En savoir plus sur les autres cours ...</button>
+    <div class="panel">
+      <p>Je vous invite à consulter  <a href="#cours-a-domicile"  >Cours en privés à domicile </a>ou <a href="#cours-en-ligne">Cours en ligne.</a></p>
+    </div>
+</div>
+<!-----------------------  Cours en ligne EN LIVE -------------------->
+<div class="infos-cours-container" *ngIf="cours_live">
+  <p style="" >Loni propose aussi <b>des cours en ligne</b>Ainsi depuis votre espace personnel, vous pourrez recevoir le cours en live et en temps réels comme si
+    vous étiez au cours à domicile.Vous pourrez poser des questions, respondre aux questions oralement grace à  un tableau interactif.
+  Egalement vous pourrez inviter des amis de la classe a y prendre part.Depuis votre espace personnel, vous pourrez voir le prof.</p>
+
+    <h3>Cours en Ligne(en Live avec le prof) F.A.Q</h3>
+  <button class="accordion" ><i class="glyphicon glyphicon-plus-sign"></i>Quels sont les taux horaires ?</button>
+  <div class="panel">
+      <p>Le taux horaire est de <strong>€20 </strong>pour les cours de maths, physique et chimie dans votre domicile.Par
+      ailleurs, il est de <strong>€25 </strong> pour l'initiation à la programmation.</p>
+  </div>
+
+  <button class="accordion"><i class="glyphicon glyphicon-plus-sign"></i>Comment payez ?</button>
+  <div class="panel">
+    <p>Vous pouvez faire en ligne avec notre <b>système securisé</b>.</p>
+  </div>
+
+  <button class="accordion"><i class="glyphicon glyphicon-plus-sign"></i>Comment puis-je planifier un cours avec vous ?</button>
+  <div class="panel">
+    <p>
+      Les cours ont lieu le même jour et le même horaire chaque semaine. Pour ce faire, vous vous connectez et depuis votre
+      espace personnel, vous pourrez passer la commande après avoir reservé vos ceneaux, puis regler le pontant en ligne.
+      Ainsi, vous recevrez une notification par mail et sur votre téléphone portable.</p>
+  </div>
+
+  <button class="accordion"><i class="glyphicon glyphicon-plus-sign"></i>Puis-je beneficier des cours en ligne et des cours à domicile?</button>
+  <div class="panel">
+    <p>Oui, bien-sûr, ces deux options sont cumulables.Cependant pour les cours à domicile, tout dependra de la situation géographique de votre domicile</p>
+  </div>
+
+  <button class="accordion"><i class="glyphicon glyphicon-plus-sign"></i>Comment annuler un cours den ligne ejà programmé?</button>
+  <div class="panel">
+    <p>Pour le moment, Si vous decidez d'annuler les cours <strong>4 heures à l'avance</strong> de communs accords, on pourra fixer un autre
+    programme, en fonctions de nos emplois du temps respectifs. Attention, Cette mesure pourra évoluer à la longue.</p>
+  </div>
+
+  <button class="accordion"><i class="glyphicon glyphicon-plus-sign"></i>En savoir plus sur les autres cours ...</button>
+  <div class="panel">
+    <p>Je vous invite à consulter  <a href="#cours-a-domicile"  >Cours en privés à domicile </a>ou <a href="#cours-intensif">Cours intensif.</a></p>
+  </div>
+  </div>
+
+  <!----------- COURS EN LIGNE EN SOLO ---------------------------------------->
+  <div class="infos-cours-container" *ngIf="autre_cours_en_ligne">
+    <p style="" >Loni propose  <b>des cours en ligne préconçue avec un espace interactifs pour ses aboonées.</b>Vous beneficiez de
+    toutes les ressources disponible sur le site. Vous pourrez suivre les cours, faire des exercices, voir nos corrections, participer aux forums et aux
+    journées challenges et colles.
+   Aussi vous pourrez sauvegarder vos traités et corrections sur votre espace personnel.Un tableau de bord vous indiquera vos competences.</p>
+
+      <h3>Cours en ligne(en Solo) F.A.Q</h3>
+    <button class="accordion" ><i class="glyphicon glyphicon-plus-sign"></i>Quels sont les taux horaires ?</button>
+    <div class="panel">
+        <p>Les tarifs pour les cours restent le même comme dans les autres choix. Cependant vous serez amener à vous abonner pour .pour un forfait de 30euros par mois.</p>
+    </div>
+
+    <button class="accordion"><i class="glyphicon glyphicon-plus-sign"></i>Comment payez ?</button>
+    <div class="panel">
+      <p>Vous pouvez faire en ligne avec notre <b>système securisé</b>.</p>
+    </div>
+
+    <button class="accordion"><i class="glyphicon glyphicon-plus-sign"></i>Comment puis-je planifier un cours avec vous ?</button>
+    <div class="panel">
+      <p>
+        Les cours ont lieu le même jour et le même horaire chaque semaine. Pour ce faire, vous vous connectez et depuis votre
+        espace personnel, vous pourrez passer la commande après avoir reservé vos ceneaux, puis regler le pontant en ligne.
+        Ainsi, vous recevrez une notification par mail et sur votre téléphone portable.</p>
+    </div>
+
+    <button class="accordion"><i class="glyphicon glyphicon-plus-sign"></i>Puis-je beneficier des cours en ligne et des cours à domicile?</button>
+    <div class="panel">
+      <p>Oui, bien-sûr, ces deux options sont cumulables.Cependant pour les cours à domicile, tout dependra de la situation géographique de votre domicile</p>
+    </div>
+
+    <button class="accordion"><i class="glyphicon glyphicon-plus-sign"></i>Comment annuler un cours den ligne ejà programmé?</button>
+    <div class="panel">
+      <p>Pour le moment, Si vous decidez d'annuler les cours <strong>4 heures à l'avance</strong> de communs accords, on pourra fixer un autre
+      programme, en fonctions de nos emplois du temps respectifs. Attention, Cette mesure pourra évoluer à la longue.</p>
+    </div>
+
+    <button class="accordion"><i class="glyphicon glyphicon-plus-sign"></i>En savoir plus sur les autres cours ...</button>
+    <div class="panel">
+      <p>Je vous invite à consulter  <a href="#cours-a-domicile"  >Cours en privés à domicile </a>ou <a href="#cours-intensif">Cours intensif.</a></p>
+    </div>
+    </div>
+
+    <!-------------------------------------- COURS ET SUIVI ---------------------------------------------------->
+    <div class="infos-cours-container" *ngIf="cours_et_suivi">
+      <p style="" >Loni propose aussi <b>des cours en ligne</b>Ainsi depuis votre espace personnel, vous pourrez recevoir le cours en live et en temps réels comme si
+        vous étiez au cours à domicile.Vous pourrez poser des questions, respondre aux questions oralement grace à  un tableau interactif.
+      Egalement vous pourrez inviter des amis de la classe a y prendre part.Depuis votre espace personnel, vous pourrez voir le prof.</p>
+
+        <h3>Cours et Suivi F.A.Q</h3>
+      <button class="accordion" ><i class="glyphicon glyphicon-plus-sign"></i>Quels sont les taux horaires ?</button>
+      <div class="panel">
+          <p>Cette option inclue en plus des cours, un suivi.Le tarif pour les cours reste inchangé.Cependant vous serez amené
+          à vous abonner pour le suivi.Ce dernier étant facturé en fonction des autres options.soit <strong>€25 </strong> </p>
+      </div>
+
+      <button class="accordion"><i class="glyphicon glyphicon-plus-sign"></i>Comment payez ?</button>
+      <div class="panel">
+        <p>Vous pouvez faire en ligne avec notre <b>système securisé</b>.</p>
+      </div>
+
+      <button class="accordion"><i class="glyphicon glyphicon-plus-sign"></i>Comment puis-je planifier un cours avec vous ?</button>
+      <div class="panel">
+        <p>
+          Les cours ont lieu le même jour et le même horaire chaque semaine. Pour ce faire, vous vous connectez et depuis votre
+          espace personnel, vous pourrez passer la commande après avoir reservé vos ceneaux, puis regler le pontant en ligne.
+          Ainsi, vous recevrez une notification par mail et sur votre téléphone portable.</p>
+      </div>
+
+      <button class="accordion"><i class="glyphicon glyphicon-plus-sign"></i>Puis-je beneficier des cours en ligne et des cours à domicile?</button>
+      <div class="panel">
+        <p>Oui, bien-sûr, ces deux options sont cumulables.Cependant pour les cours à domicile, tout dependra de la situation géographique de votre domicile</p>
+      </div>
+
+      <button class="accordion"><i class="glyphicon glyphicon-plus-sign"></i>Comment annuler un cours den ligne ejà programmé?</button>
+      <div class="panel">
+        <p>Pour le moment, Si vous decidez d'annuler les cours <strong>4 heures à l'avance</strong> de communs accords, on pourra fixer un autre
+        programme, en fonctions de nos emplois du temps respectifs. Attention, Cette mesure pourra évoluer à la longue.</p>
+      </div>
+
+      <button class="accordion"><i class="glyphicon glyphicon-plus-sign"></i>En savoir plus sur les autres cours ...</button>
+      <div class="panel">
+        <p>Je vous invite à consulter  <a href="#cours-a-domicile"  >Cours en privés à domicile </a>ou <a href="#cours-intensif">Cours intensif.</a></p>
+      </div>
+    </div>
+
+
+
+
+  <!--  END INFOS ET SERVICES -------------------->
+  <!------------------------------------------------------------------------------------------------------------------------->
+  <!-- footer footer start here-->
+  <div class="content-container" style="border-top:1px solid white;">
+    <div class="content">
+      <div class="footer">
+
+        <div class="footer-sitemap">
+          <div class="footer-section">
+            <b>Nos compétences</b><br /><br />
+            <a href="#">Maths séconde - terminale</a><br />
+            <a href="#">Physique séconde - terminale</a><br />
+            <a href="#">Chimie séconde - terminale</a><br />
+            <a href="#">Initiation à la programmation C/python</a><br />
+          </div>
+
+          <div class="footer-section">
+            <b></b><br /><br />
+            <a href="#"></a><br />
+            <a href="#"></a><br />
+            <a href="#"></a>
+            <a href="#"></a><br />
+          </div>
+
+          <div class="footer-section">
+            <b></b><br /><br />
+            <a href="mailto:tresonance@hotmail.fr">Nous contacter</a><br />
+            <a href="#">Terms &amp; privacy</a><br />
+          </div>
+
+          <div class="footer-section">
+            <div class="social-media-links">
+              <b>Nous suivre:</b><br/><br />
+              <a href="http://www.facebook.com/SchoolYourself"><img src="//schoolyourself.org/images/facebook_icon.png" width="30"/></a>
+              <a href="https://plus.google.com/111095141647823369081/posts"><img src="//schoolyourself.org/images/gplus_icon.png" width="30"/></a>
+              <a href="http://twitter.com/SchoolYourself"><img src="//schoolyourself.org/images/twitter_icon.png" width="30"/></a>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="copyright">&copy; 2012-2015 School Yourself, Inc.<br/>
+          Icons from <a href="http://glyphicons.com">glyphicons.com</a> <a href="http://creativecommons.org/licenses/by/3.0/deed.en">(license)</a></div>
+      </div>
+    </div>
+  </div>
+</body>

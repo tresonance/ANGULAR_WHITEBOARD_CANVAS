@@ -1,0 +1,178 @@
+<body>
+  <div class="header-container">
+      <div class="header">
+          <div class="logo"  >
+              <div style="width:25%; height:25%; margin-left:-3%; margin-top:-1%; ">
+                  <a [routerLink]="['/loni']" >
+                      <img src="../../../assets/img/accueil2/logo.png" alt="loni" style="width:40%; height:480%; " />
+                      <span style="font-weight:bold; margin-left:-19px; font-family:cursive, sans-serif">Loni</span>
+                      <div style="font-size:0.5em;  position:absolute;  width: 140px; display:block; top:29px; left:80px;">Les cours et suivi particuliers</div>
+                  </a>
+              </div>
+          </div> <!-- LOGO end here -->
+
+          <div id="menu">
+              <ul id="nav">
+                  <li><a  [routerLink]="['/loni']" >Accueil</a></li>
+                  <li><a  [routerLink]="['/a_propos']" >A propos</a></li>
+                  <!--<li><a href="#" target="_self" >A Propos</a></li> -->
+                  <!--<li><a href="#" target="_self" >Qui suis je?</a></li>-->
+                  <li><a [routerLink]="['/infos-services']"  class="sub_menu_after_flag">Infos & Services</a>
+                      <ul class="sub_menu_before1_flag">
+                          <!-- <li><a href="#" target="_self" >Qui-suis je?</a></li> -->
+                          <li><a [routerLink]="['/infos-services/cours']" >Cours particuliers</a>
+                              <ul >
+                                <li><a [routerLink]="['/infos-services/cours/cours-domicile']" class="sub_menu_before2_flag">Cours particuliers</a>
+                                <!--<li><a [routerLink]="['/infos-services/cours/cours-ligne']" >Cours en ligne</a>-->
+                                <li><a [routerLink]="['/infos-services/cours/cours-intensifs']" >Cours intensifs</a>
+                                <li><a [routerLink]="['/infos-services/cours/aide-devoirs']" >Cours en ligne</a>
+                                <li><a [routerLink]="['/infos-services/cours/autres-infos']" >Autres ...</a>
+                              </ul>
+                          </li>
+                          <li><a [routerLink]="['/infos-services/tarifs']" >Tarifs</a>
+                          <li><a  [routerLink]="['/infos-services/commentaires']">Commentaires</a>
+                      </ul>
+                </li>
+                <li><a [routerLink]="['/contact']" >Contact</a></li>
+                <li><a [routerLink]="['/register']" ><span class="show-reg-form-signup hidden-xs"><i style="margin:5px;" class="fa fa-user-secret"></i>Sign up</span></a></li>
+              <li><a [routerLink]="['/login']"><span class="show-reg-form "><i style="margin:5px;" class="fa fa-sign-in"></i>Sign In</span></a></li>
+            </ul>
+        </div> <!-- MENU end here -->
+    </div><!-- HEADER end here -->
+  </div> <!-- HEADER-CONTAINER end here -->
+  <!------------------------ CONTACT START HERE ----------------------------->
+  <div class="section-text-container">
+        <div class="section-text-left"> <!-- left div --->
+            <form class="section-text-left-form" action="" method="post">
+
+              <p><label> Your name (required)<br class="break-raw" />
+              <span class="wpcf7-form-control-wrap your-name"><input type="text" name="your-name" value="" size="40" class="wpcf7-form-control wpcf7-text wpcf7-validates-as-required" aria-required="true" aria-invalid="false" /></span>
+             </label></p>
+
+             <p><label> E-Mail (required)<br class="break-raw" />
+               <span class="wpcf7-form-control-wrap your-email"><input type="email" name="your-email" value="" size="40" class="wpcf7-form-control wpcf7-text wpcf7-email wpcf7-validates-as-required wpcf7-validates-as-email" aria-required="true" aria-invalid="false" /></span>
+            </label></p>
+
+            <p><label> Phone number<br class="break-raw" />
+              <span class="wpcf7-form-control-wrap Telfono"><input type="tel" name="Telfono" value="" size="40" class="wpcf7-form-control wpcf7-text wpcf7-tel wpcf7-validates-as-tel" aria-invalid="false" /></span>
+            </label></p>
+
+
+            <p><label> Subject<br class="break-raw" />
+              <span class="wpcf7-form-control-wrap your-subject"><input type="text" name="your-subject" value="" size="40" class="wpcf7-form-control wpcf7-text" aria-invalid="false" /></span>
+            </label></p>
+
+
+            <p><label> Message<br class="break-raw" />
+              <span class="wpcf7-form-control-wrap your-message"><textarea name="your-message" cols="39" rows="9" class="wpcf7-form-control wpcf7-textarea" aria-invalid="false"></textarea></span>
+            </label><br /></p>
+            <div class="wpcf7-form-control-wrap"><div data-sitekey="6LeZ8DMUAAAAALJmY8aH6C3et3otRnnUvER0z_3B" data-theme="dark" class="wpcf7-form-control g-recaptcha wpcf7-recaptcha"></div>
+              <noscript>
+	               <div style="">
+		                 <div style="">
+			                    <div style="">
+				                        <iframe src="https://www.google.com/recaptcha/api/fallback?k=6LeZ8DMUAAAAALJmY8aH6C3et3otRnnUvER0z_3B" frameborder="0" scrolling="no" style="">
+				                        </iframe>
+			                     </div>
+			                    <div style="">
+				                        <textarea id="g-recaptcha-response" name="g-recaptcha-response" class="g-recaptcha-response" style="">
+				                        </textarea>
+			                    </div>
+		                 </div>
+	               </div>
+              </noscript>
+          </div>
+          <p><input style="width:80px; height:30px" type="submit" value="Send" class="wpcf7-form-control wpcf7-submit" /></p>
+          <div class="wpcf7-response-output wpcf7-display-none"></div>
+          </form>
+        </div> <!--- end left div -->
+
+
+        <div class="section-text-right"> <!--   RIGHT -------------------------------------->
+                <h3 style="color:blue;margin:20px;">Contact information</h3>
+                <table>
+                  <tbody>
+
+                    <tr style="">
+                      <td style="text-align: center; padding-right:100px;"><i class="glyphicon glyphicon-envelope" style="color:#0a0a0a;left:50%;"></i></td>
+                      <td><a href="mailto:contact@mathwithsophie.com" target="_blank" rel="noopener">contact@mathwithsophie.com</a></td>
+                    </tr>
+
+                    <tr>
+                      <td style="text-align: center; padding-right:100px;"><i class="glyphicon glyphicon-earphone" style="color:#0a0a0a;left:50%;"></i></td>
+                      <td>(0034) 673 82 41 84</td>
+                    </tr>
+
+                    <tr>
+                      <td style="text-align: center; padding-right:100px;"><i class="glyphicon glyphicon-map-marker" style="color:#0a0a0a;left:50%;"></i></td>
+                      <td>Calle Diamante 20, Mijas Costa</td>
+                    </tr>
+
+                  </tbody>
+                </table>
+                  <h3 style="color:blue; margin:40px;">Follow me</h3>
+                      <div class="norm_row sfsi_wDiv"  style=""><!-- start -->
+                          <div style='display:inline-block;' class=''>
+                              <div class='inerCnt'><a class=' sficn' effect='scale' target='_blank'  href='https://www.facebook.com/mathwithsophie' id='sfsiid_facebook' alt='Facebook' style='opacity:1' ><img alt='Facebook' title='Facebook' src='https://mathwithsophie.com/wp-content/uploads/2017/12//custom_iconfacebook_skin.png' width='40' height='40' style='' class='sfcm sfsi_wicon' effect='scale'   /></a>
+                              </div>
+                          </div>
+
+                          <div style='display:inline-block;' class=''>
+                            <div class='inerCnt'><a class=' sficn' effect='scale' target='_blank'  href='https://www.youtube.com/channel/UCuV5tXTNHdgskM_tbAo8rXw' id='sfsiid_youtube' alt='YouTube' style='opacity:1' ><img alt='YouTube' title='YouTube' src='https://mathwithsophie.com/wp-content/uploads/2017/12//custom_iconyoutube_skin.png' width='40' height='40' style='' class='sfcm sfsi_wicon' effect='scale'   /></a>
+                            </div>
+                          </div>
+
+                          <div style='display:inline-block;' class=''>
+                            <div class='inerCnt'><a class=' sficn' effect='scale' target='_blank'  href='https://www.instagram.com/math_with_sophie/' id='sfsiid_instagram' alt='Instagram' style='opacity:1' ><img alt='Instagram' title='Instagram' src='https://mathwithsophie.com/wp-content/uploads/2017/12//custom_iconinstagram_skin.png' width='40' height='40' style='' class='sfcm sfsi_wicon' effect='scale'   /></a>
+                            </div>
+                          </div>
+                      </div><!---  END ---->
+
+        </div> <!---------------------- RIGHT STOP HERE ----------------------------------------->
+  </div>
+  <!-- footer footer start here-->
+  <div class="content-container">
+    <div class="content">
+      <div class="footer">
+
+        <div class="footer-sitemap">
+          <div class="footer-section">
+            <b>Nos compétences</b><br /><br />
+            <a href="#">Maths séconde - terminale</a><br />
+            <a href="#">Physique séconde - terminale</a><br />
+            <a href="#">Chimie séconde - terminale</a><br />
+            <a href="#">Initiation à la programmation C/python</a><br />
+          </div>
+
+          <div class="footer-section">
+            <b></b><br /><br />
+            <a href="#"></a><br />
+            <a href="#"></a><br />
+            <a href="#"></a>
+            <a href="#"></a><br />
+          </div>
+
+          <div class="footer-section">
+            <b></b><br /><br />
+            <a href="mailto:tresonance@hotmail.fr">Nous contacter</a><br />
+            <a href="#">Terms &amp; privacy</a><br />
+          </div>
+
+          <div class="footer-section">
+            <div class="social-media-links">
+              <b>Nous suivre:</b><br/><br />
+              <a href="http://www.facebook.com/SchoolYourself"><img src="//schoolyourself.org/images/facebook_icon.png" width="30"/></a>
+              <a href="https://plus.google.com/111095141647823369081/posts"><img src="//schoolyourself.org/images/gplus_icon.png" width="30"/></a>
+              <a href="http://twitter.com/SchoolYourself"><img src="//schoolyourself.org/images/twitter_icon.png" width="30"/></a>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="copyright">&copy; 2012-2015 School Yourself, Inc.<br/>
+          Icons from <a href="http://glyphicons.com">glyphicons.com</a> <a href="http://creativecommons.org/licenses/by/3.0/deed.en">(license)</a></div>
+      </div>
+    </div>
+  </div>
+  <!-----------------------  CONTACT END HERE -------------------------------->
+</body>

@@ -1,0 +1,77 @@
+<div id = container>
+    <!-- ENTETS  -->
+  <div class="toolbar-container">
+    <app-toolbar
+
+        [updateCurrentShape] = "currentShape"
+        [shapeOptions] = "newOption"
+        (openSelection)="bool_openShapePopUp($event)"
+        (mustOpenFillColor) = "booL_onOpenFillColor($event)"
+        (mustOpenStrokeColor) = "bool_onOpenStrokeColor($event)"
+        (draw)="bool_onStartDrawing($event)"
+        (clear)="bool_onStartClearing($event)"
+        (undo)='bool_onUndo($event)'
+        (redo)="bool_onRedo($event)"
+        (save)="bool_onSave($event)"
+        (gotoProfil) = "bool_onProfil($event)"
+
+
+    ></app-toolbar>
+    <!------------------------------ CAMERA ------------------------------------------->
+    <div  class="camera" style="width:auto; height=auto; position:absolute; left:78%">
+        <app-camera
+
+
+        >
+        </app-camera>
+
+        <!-- <div class="snapshot" *ngIf="bool_webcamImage" style="width:180px; height:210px;">
+            <img *ngIf="bool_webcamImage" style="width:100%; height:100%;" [src]="webcamImage.imageAsDataUrl" />
+        </div> -->
+    </div>
+    <!---------------------------------------------------------------------------------->
+    <!-- LES POPUPS -->
+    <div class="canvas-whiteboard-shape-selector-wrapper" [hidden]="!showShapeSelector" >
+        <app-canvas-selection-shape   #selection
+          (clickOutside)="onClickedOutsideShapesContainer($event)"
+          (selectedShape)="onSlectShape($event)"
+          [shapeOptions] = "newOption"
+          ></app-canvas-selection-shape>
+    </div>
+
+    <app-fill-color-picker *ngIf="showFillColorPicker"
+        (onColorSelected) = "selectedFillColor($event)"
+        (clickOutsideFillColorPicker)="onClickedOutsideFillColorPicker($event)"
+    ></app-fill-color-picker>
+
+    <app-stroke-color-picker *ngIf="showStrokeColorPicker"
+        (onColorSelected) = "selectedStrokeColor($event)"
+        (clickOutsideStrokeColorPicker) = "onClickedOutsideStrokeColorPicker($event)"
+    ></app-stroke-color-picker>
+  </div><!-- END TOOLBAR -->
+
+    <div class="canvas-component-container">
+        <app-canvas
+            [drawButtonEnabled]= "boolDraw"
+            [clearButtonEnabled] = "boolClear"
+            [undoButtonEnabled] = "boolUndo"
+            [redoButtonEnabled] = "boolRedo"
+            [saveButtonEnabled] = "boolSave"
+            [shapeOptions]="newOption"
+            [batchUpdateTimeoutDuration] = "redrawTimeFrequency"
+            [downloadedFileName] = "downloadedFileName"
+            [lineWidth] = "lineWidth"
+            [scaleFactor] = "scaleFactor"
+            [shouldDownloadDrawing] = "shouldDownloadDrawing"
+            [undoButtonTextEnabled] = "undoButtonTextEnabled"
+            [redoButtonTextEnabled] = "redoButtonTextEnabled"
+            [saveButtonTextEnabled] = "saveButtonTextEnabled"
+            [clearButtonTextEnabled] = "clearButtonTextEnabled"
+            [drawButtonTextEnabled]= "drawButtonTextEnabled"
+            [currentShape] = "currentShape"
+
+            [canvasShareWith]="canvas_share_Users"
+        >
+        </app-canvas>
+    </div>
+</div>

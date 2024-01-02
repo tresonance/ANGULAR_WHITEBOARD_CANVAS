@@ -1,0 +1,84 @@
+Arguments: 
+  /usr/local/Cellar/node/12.6.0/bin/node /usr/local/Cellar/yarn/1.10.1/libexec/bin/yarn.js add angularfire2 firebase
+
+PATH: 
+  /Library/Frameworks/Python.framework/Versions/3.7/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/X11/bin
+
+Yarn version: 
+  1.10.1
+
+Node version: 
+  12.6.0
+
+Platform: 
+  darwin x64
+
+Trace: 
+  Error: connect ENETUNREACH 104.16.20.35:443 - Local (0.0.0.0:58334)
+      at internalConnect (net.js:835:16)
+      at defaultTriggerAsyncIdScope (internal/async_hooks.js:301:12)
+      at emitLookup (net.js:978:9)
+      at /usr/local/Cellar/yarn/1.10.1/libexec/lib/cli.js:96856:28
+      at /usr/local/Cellar/yarn/1.10.1/libexec/lib/cli.js:96765:13
+      at RawTask.module.exports.RawTask.call (/usr/local/Cellar/yarn/1.10.1/libexec/lib/cli.js:76100:19)
+      at flush (/usr/local/Cellar/yarn/1.10.1/libexec/lib/cli.js:76182:29)
+      at processTicksAndRejections (internal/process/task_queues.js:75:11)
+
+npm manifest: 
+  {
+    "name": "front",
+    "version": "0.0.0",
+    "scripts": {
+      "ng": "ng",
+      "start": "ng serve",
+      "build": "ng build",
+      "test": "ng test",
+      "lint": "ng lint",
+      "e2e": "ng e2e"
+    },
+    "private": true,
+    "dependencies": {
+      "@angular/animations": "~8.1.2",
+      "@angular/cdk": "^8.1.1",
+      "@angular/common": "~8.1.2",
+      "@angular/compiler": "~8.1.2",
+      "@angular/core": "~8.1.2",
+      "@angular/forms": "~8.1.2",
+      "@angular/material": "^8.1.1",
+      "@angular/platform-browser": "~8.1.2",
+      "@angular/platform-browser-dynamic": "~8.1.2",
+      "@angular/router": "~8.1.2",
+      "angular2-cookie": "^1.2.6",
+      "rxjs": "~6.4.0",
+      "rxjs-compat": "^6.5.2",
+      "tslib": "^1.9.0",
+      "zone.js": "~0.9.1"
+    },
+    "devDependencies": {
+      "@angular-devkit/build-angular": "~0.801.2",
+      "@angular/cli": "~8.1.2",
+      "@angular/compiler-cli": "~8.1.2",
+      "@angular/language-service": "~8.1.2",
+      "@types/node": "~8.9.4",
+      "@types/jasmine": "~3.3.8",
+      "@types/jasminewd2": "~2.0.3",
+      "codelyzer": "^5.0.0",
+      "jasmine-core": "~3.4.0",
+      "jasmine-spec-reporter": "~4.2.1",
+      "karma": "~4.1.0",
+      "karma-chrome-launcher": "~2.2.0",
+      "karma-coverage-istanbul-reporter": "~2.0.1",
+      "karma-jasmine": "~2.0.1",
+      "karma-jasmine-html-reporter": "^1.4.0",
+      "protractor": "~5.4.0",
+      "ts-node": "~7.0.0",
+      "tslint": "~5.15.0",
+      "typescript": "~3.4.3"
+    }
+  }
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile

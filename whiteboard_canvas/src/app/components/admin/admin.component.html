@@ -1,0 +1,40 @@
+<body >
+  <div class="chatroom-container">
+        <!---- add chatrooms ----------------->
+        <div class="container-fluid">
+            <div class="row">
+              <div class="col-md-4">
+                <h3 class="text-center">ADD CHATS ROOMS </h3>
+                <br />
+
+                <div class="input-group">
+                    <input type="text" [(ngModel)]="chatRoomName" (keyup.enter)="createNewChatRoom()" class="form-control" placeholder="Chat room name">
+                    <span class="input-group-btn">
+                      <button (click)="createNewChatRoom()" class="btn btn-primary">Submit</button>
+                    </span>
+                </div>
+
+            </div>
+          </div>
+        </div>
+
+<hr/>
+
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-4">
+      <h3 class="text-center">ADD CHAT BOX </h3>
+      <hr>
+
+          <div class="input-group">
+            <input type="text" [(ngModel)]="chatBoxName" (keyup.enter)="createNewChatBox()" class="form-control" placeholder="Chat box name">
+            <span class="input-group-btn">
+              <button (click)="createNewChatBox()" class="btn btn-primary">Start chat box</button>
+            </span>
+          </div>
+
+    </div>
+  </div>
+</div>
+</div>
+</body>
